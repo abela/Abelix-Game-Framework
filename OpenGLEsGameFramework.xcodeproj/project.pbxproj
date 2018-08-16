@@ -134,6 +134,14 @@
 			path = FlappyBird;
 			sourceTree = "<group>";
 		};
+		AB553956212588E700E75EEF /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				AB3CAFC8211E1423006D182C /* FlappyBird */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
 		AB9C7114211A0749005763A2 /* GameObject */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,9 +221,9 @@
 			children = (
 				AB9D020F21178A550068826C /* Application */,
 				AB9D0215211791EA0068826C /* GameEngine */,
-				AB3CAFC8211E1423006D182C /* FlappyBird */,
-				AB9D01FF211789F20068826C /* Main.storyboard */,
+				AB553956212588E700E75EEF /* Examples */,
 				ABDC469E2123677C00B8AB17 /* LaunchScreen.storyboard */,
+				AB9D01FF211789F20068826C /* Main.storyboard */,
 				AB9D0202211789F40068826C /* Assets.xcassets */,
 				AB9D0207211789F40068826C /* Info.plist */,
 				AB9D0208211789F40068826C /* main.m */,
