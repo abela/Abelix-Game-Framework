@@ -1,0 +1,570 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AB3CAFCD211E207D006D182C /* MainCharacter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB3CAFCB211E207D006D182C /* MainCharacter.cpp */; };
+		AB3CAFE8211ED320006D182C /* PhysicsBody.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB3CAFE6211ED320006D182C /* PhysicsBody.cpp */; };
+		AB3CAFEB211EE980006D182C /* CirclePhysicsBody.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB3CAFE9211EE980006D182C /* CirclePhysicsBody.cpp */; };
+		AB3CAFEE211F3CA7006D182C /* Pipe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB3CAFEC211F3CA7006D182C /* Pipe.cpp */; };
+		AB3CAFF1211F3EC4006D182C /* RectanglePhysicsBody.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB3CAFEF211F3EC4006D182C /* RectanglePhysicsBody.cpp */; };
+		AB3CAFF421204EEC006D182C /* PipesManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB3CAFF221204EEC006D182C /* PipesManager.cpp */; };
+		AB6736E3211B8D8D004E2870 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB6736E1211B8D8D004E2870 /* Camera.cpp */; };
+		AB6A0D9E211CE7EE001D60C0 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB6A0D9C211CE7EE001D60C0 /* Scene.cpp */; };
+		AB9C7118211A0781005763A2 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB9C7116211A0781005763A2 /* GameObject.cpp */; };
+		AB9C711C211A0826005763A2 /* PhysicsEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB9C711A211A0826005763A2 /* PhysicsEngine.cpp */; };
+		AB9C7121211A0A76005763A2 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB9C711F211A0A76005763A2 /* Utils.cpp */; };
+		AB9C7127211A1D7A005763A2 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9C7125211A1D7A005763A2 /* CoreFoundation.framework */; };
+		AB9C7128211A1D7A005763A2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9C7126211A1D7A005763A2 /* Foundation.framework */; };
+		AB9C712A211A1D93005763A2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9C7129211A1D93005763A2 /* QuartzCore.framework */; };
+		AB9C712C211A1D9E005763A2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9C712B211A1D9E005763A2 /* CoreGraphics.framework */; };
+		AB9C7161211B25D2005763A2 /* VertexShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = AB9C715F211B25D2005763A2 /* VertexShader.vsh */; };
+		AB9C7162211B25D2005763A2 /* FragmentShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = AB9C7160211B25D2005763A2 /* FragmentShader.fsh */; };
+		AB9C7165211B28B3005763A2 /* GLView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9C7163211B28B3005763A2 /* GLView.m */; };
+		AB9C7168211B2FB6005763A2 /* ShaderManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB9C7166211B2FB6005763A2 /* ShaderManager.cpp */; };
+		AB9D01FB211789F20068826C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9D01FA211789F20068826C /* AppDelegate.m */; };
+		AB9D01FE211789F20068826C /* OpenGLViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB9D01FD211789F20068826C /* OpenGLViewController.mm */; };
+		AB9D0201211789F20068826C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB9D01FF211789F20068826C /* Main.storyboard */; };
+		AB9D0203211789F40068826C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB9D0202211789F40068826C /* Assets.xcassets */; };
+		AB9D0209211789F40068826C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9D0208211789F40068826C /* main.m */; };
+		AB9D021221178AA60068826C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9D021121178AA60068826C /* OpenGLES.framework */; };
+		AB9D021421178AAE0068826C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9D021321178AAE0068826C /* GLKit.framework */; };
+		AB9D0218211792800068826C /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB9D0216211792800068826C /* Application.cpp */; };
+		AB9D021F21179A1D0068826C /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB9D021D21179A1D0068826C /* GameScene.cpp */; };
+		ABDC46A02123677C00B8AB17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABDC469E2123677C00B8AB17 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AB3CAFCB211E207D006D182C /* MainCharacter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MainCharacter.cpp; sourceTree = "<group>"; };
+		AB3CAFCC211E207D006D182C /* MainCharacter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainCharacter.h; sourceTree = "<group>"; };
+		AB3CAFE4211ED28F006D182C /* ICollisionEventListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICollisionEventListener.h; sourceTree = "<group>"; };
+		AB3CAFE6211ED320006D182C /* PhysicsBody.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsBody.cpp; sourceTree = "<group>"; };
+		AB3CAFE7211ED320006D182C /* PhysicsBody.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhysicsBody.h; sourceTree = "<group>"; };
+		AB3CAFE9211EE980006D182C /* CirclePhysicsBody.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CirclePhysicsBody.cpp; sourceTree = "<group>"; };
+		AB3CAFEA211EE980006D182C /* CirclePhysicsBody.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CirclePhysicsBody.h; sourceTree = "<group>"; };
+		AB3CAFEC211F3CA7006D182C /* Pipe.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Pipe.cpp; sourceTree = "<group>"; };
+		AB3CAFED211F3CA7006D182C /* Pipe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pipe.h; sourceTree = "<group>"; };
+		AB3CAFEF211F3EC4006D182C /* RectanglePhysicsBody.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RectanglePhysicsBody.cpp; sourceTree = "<group>"; };
+		AB3CAFF0211F3EC4006D182C /* RectanglePhysicsBody.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RectanglePhysicsBody.h; sourceTree = "<group>"; };
+		AB3CAFF221204EEC006D182C /* PipesManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PipesManager.cpp; sourceTree = "<group>"; };
+		AB3CAFF321204EEC006D182C /* PipesManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PipesManager.h; sourceTree = "<group>"; };
+		AB6736E1211B8D8D004E2870 /* Camera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		AB6736E2211B8D8D004E2870 /* Camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		AB6A0D9C211CE7EE001D60C0 /* Scene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
+		AB6A0D9D211CE7EE001D60C0 /* Scene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
+		AB9C7116211A0781005763A2 /* GameObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
+		AB9C7117211A0781005763A2 /* GameObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameObject.h; sourceTree = "<group>"; };
+		AB9C711A211A0826005763A2 /* PhysicsEngine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsEngine.cpp; sourceTree = "<group>"; };
+		AB9C711B211A0826005763A2 /* PhysicsEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhysicsEngine.h; sourceTree = "<group>"; };
+		AB9C711D211A0978005763A2 /* IGameObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IGameObject.h; sourceTree = "<group>"; };
+		AB9C711F211A0A76005763A2 /* Utils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Utils.cpp; sourceTree = "<group>"; };
+		AB9C7120211A0A76005763A2 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		AB9C7125211A1D7A005763A2 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		AB9C7126211A1D7A005763A2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AB9C7129211A1D93005763A2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AB9C712B211A1D9E005763A2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AB9C715F211B25D2005763A2 /* VertexShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = VertexShader.vsh; sourceTree = "<group>"; };
+		AB9C7160211B25D2005763A2 /* FragmentShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = FragmentShader.fsh; sourceTree = "<group>"; };
+		AB9C7163211B28B3005763A2 /* GLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLView.m; sourceTree = "<group>"; };
+		AB9C7164211B28B3005763A2 /* GLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLView.h; sourceTree = "<group>"; };
+		AB9C7166211B2FB6005763A2 /* ShaderManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderManager.cpp; sourceTree = "<group>"; };
+		AB9C7167211B2FB6005763A2 /* ShaderManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderManager.h; sourceTree = "<group>"; };
+		AB9D01F6211789F20068826C /* OpenGLEsGameFramework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLEsGameFramework.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB9D01F9211789F20068826C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AB9D01FA211789F20068826C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AB9D01FC211789F20068826C /* OpenGLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGLViewController.h; sourceTree = "<group>"; };
+		AB9D01FD211789F20068826C /* OpenGLViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenGLViewController.mm; sourceTree = "<group>"; };
+		AB9D0200211789F20068826C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AB9D0202211789F40068826C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AB9D0207211789F40068826C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB9D0208211789F40068826C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AB9D021121178AA60068826C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		AB9D021321178AAE0068826C /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		AB9D0216211792800068826C /* Application.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Application.cpp; sourceTree = "<group>"; };
+		AB9D0217211792800068826C /* Application.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
+		AB9D021A211798C30068826C /* Updater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Updater.h; sourceTree = "<group>"; };
+		AB9D021C211799CB0068826C /* IScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IScene.h; sourceTree = "<group>"; };
+		AB9D021D21179A1D0068826C /* GameScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
+		AB9D021E21179A1D0068826C /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		ABDC469F2123677C00B8AB17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = StoryBoards/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AB9D01F3211789F20068826C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB9C712C211A1D9E005763A2 /* CoreGraphics.framework in Frameworks */,
+				AB9C712A211A1D93005763A2 /* QuartzCore.framework in Frameworks */,
+				AB9C7127211A1D7A005763A2 /* CoreFoundation.framework in Frameworks */,
+				AB9C7128211A1D7A005763A2 /* Foundation.framework in Frameworks */,
+				AB9D021421178AAE0068826C /* GLKit.framework in Frameworks */,
+				AB9D021221178AA60068826C /* OpenGLES.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AB3CAFC7211E1031006D182C /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				AB9C7160211B25D2005763A2 /* FragmentShader.fsh */,
+				AB9C715F211B25D2005763A2 /* VertexShader.vsh */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		AB3CAFC8211E1423006D182C /* FlappyBird */ = {
+			isa = PBXGroup;
+			children = (
+				AB9D021D21179A1D0068826C /* GameScene.cpp */,
+				AB9D021E21179A1D0068826C /* GameScene.h */,
+				AB3CAFCB211E207D006D182C /* MainCharacter.cpp */,
+				AB3CAFCC211E207D006D182C /* MainCharacter.h */,
+				AB3CAFEC211F3CA7006D182C /* Pipe.cpp */,
+				AB3CAFED211F3CA7006D182C /* Pipe.h */,
+				AB3CAFF221204EEC006D182C /* PipesManager.cpp */,
+				AB3CAFF321204EEC006D182C /* PipesManager.h */,
+			);
+			path = FlappyBird;
+			sourceTree = "<group>";
+		};
+		AB9C7114211A0749005763A2 /* GameObject */ = {
+			isa = PBXGroup;
+			children = (
+				AB9C711D211A0978005763A2 /* IGameObject.h */,
+				AB9C7116211A0781005763A2 /* GameObject.cpp */,
+				AB9C7117211A0781005763A2 /* GameObject.h */,
+			);
+			path = GameObject;
+			sourceTree = "<group>";
+		};
+		AB9C7115211A0751005763A2 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				AB9D0216211792800068826C /* Application.cpp */,
+				AB9D0217211792800068826C /* Application.h */,
+				AB9D021A211798C30068826C /* Updater.h */,
+				AB6736E1211B8D8D004E2870 /* Camera.cpp */,
+				AB6736E2211B8D8D004E2870 /* Camera.h */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		AB9C7119211A0817005763A2 /* Physics */ = {
+			isa = PBXGroup;
+			children = (
+				AB9C711A211A0826005763A2 /* PhysicsEngine.cpp */,
+				AB9C711B211A0826005763A2 /* PhysicsEngine.h */,
+				AB3CAFE4211ED28F006D182C /* ICollisionEventListener.h */,
+				AB3CAFE6211ED320006D182C /* PhysicsBody.cpp */,
+				AB3CAFE7211ED320006D182C /* PhysicsBody.h */,
+				AB3CAFE9211EE980006D182C /* CirclePhysicsBody.cpp */,
+				AB3CAFEA211EE980006D182C /* CirclePhysicsBody.h */,
+				AB3CAFEF211F3EC4006D182C /* RectanglePhysicsBody.cpp */,
+				AB3CAFF0211F3EC4006D182C /* RectanglePhysicsBody.h */,
+			);
+			path = Physics;
+			sourceTree = "<group>";
+		};
+		AB9C711E211A09EE005763A2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AB9C711F211A0A76005763A2 /* Utils.cpp */,
+				AB9C7120211A0A76005763A2 /* Utils.h */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		AB9C715E211B25C6005763A2 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				AB3CAFC7211E1031006D182C /* resources */,
+				AB9C7166211B2FB6005763A2 /* ShaderManager.cpp */,
+				AB9C7167211B2FB6005763A2 /* ShaderManager.h */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		AB9D01ED211789F20068826C = {
+			isa = PBXGroup;
+			children = (
+				AB9D01F8211789F20068826C /* Project */,
+				AB9D01F7211789F20068826C /* Products */,
+				AB9D021021178AA50068826C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AB9D01F7211789F20068826C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AB9D01F6211789F20068826C /* OpenGLEsGameFramework.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AB9D01F8211789F20068826C /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				AB9D020F21178A550068826C /* Application */,
+				AB9D0215211791EA0068826C /* GameEngine */,
+				AB3CAFC8211E1423006D182C /* FlappyBird */,
+				AB9D01FF211789F20068826C /* Main.storyboard */,
+				ABDC469E2123677C00B8AB17 /* LaunchScreen.storyboard */,
+				AB9D0202211789F40068826C /* Assets.xcassets */,
+				AB9D0207211789F40068826C /* Info.plist */,
+				AB9D0208211789F40068826C /* main.m */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
+		AB9D020F21178A550068826C /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				AB9C7164211B28B3005763A2 /* GLView.h */,
+				AB9C7163211B28B3005763A2 /* GLView.m */,
+				AB9D01F9211789F20068826C /* AppDelegate.h */,
+				AB9D01FA211789F20068826C /* AppDelegate.m */,
+				AB9D01FC211789F20068826C /* OpenGLViewController.h */,
+				AB9D01FD211789F20068826C /* OpenGLViewController.mm */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		AB9D021021178AA50068826C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB9C712B211A1D9E005763A2 /* CoreGraphics.framework */,
+				AB9C7129211A1D93005763A2 /* QuartzCore.framework */,
+				AB9C7125211A1D7A005763A2 /* CoreFoundation.framework */,
+				AB9C7126211A1D7A005763A2 /* Foundation.framework */,
+				AB9D021321178AAE0068826C /* GLKit.framework */,
+				AB9D021121178AA60068826C /* OpenGLES.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB9D0215211791EA0068826C /* GameEngine */ = {
+			isa = PBXGroup;
+			children = (
+				AB9D0219211798240068826C /* Core */,
+				AB9D021B211799B80068826C /* Scenes */,
+				AB9C715E211B25C6005763A2 /* Shaders */,
+				AB9C711E211A09EE005763A2 /* Utils */,
+			);
+			path = GameEngine;
+			sourceTree = "<group>";
+		};
+		AB9D0219211798240068826C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				AB9C7115211A0751005763A2 /* Game */,
+				AB9C7119211A0817005763A2 /* Physics */,
+				AB9C7114211A0749005763A2 /* GameObject */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		AB9D021B211799B80068826C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				AB9D021C211799CB0068826C /* IScene.h */,
+				AB6A0D9C211CE7EE001D60C0 /* Scene.cpp */,
+				AB6A0D9D211CE7EE001D60C0 /* Scene.h */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AB9D01F5211789F20068826C /* OpenGLEsGameFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB9D020C211789F40068826C /* Build configuration list for PBXNativeTarget "OpenGLEsGameFramework" */;
+			buildPhases = (
+				AB9D01F2211789F20068826C /* Sources */,
+				AB9D01F3211789F20068826C /* Frameworks */,
+				AB9D01F4211789F20068826C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenGLEsGameFramework;
+			productName = "Abelix-Zeptoplab-Test";
+			productReference = AB9D01F6211789F20068826C /* OpenGLEsGameFramework.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AB9D01EE211789F20068826C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Giorgi Abelashvili";
+				TargetAttributes = {
+					AB9D01F5211789F20068826C = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = AB9D01F1211789F20068826C /* Build configuration list for PBXProject "OpenGLEsGameFramework" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AB9D01ED211789F20068826C;
+			productRefGroup = AB9D01F7211789F20068826C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AB9D01F5211789F20068826C /* OpenGLEsGameFramework */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AB9D01F4211789F20068826C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB9C7161211B25D2005763A2 /* VertexShader.vsh in Resources */,
+				AB9C7162211B25D2005763A2 /* FragmentShader.fsh in Resources */,
+				AB9D0203211789F40068826C /* Assets.xcassets in Resources */,
+				ABDC46A02123677C00B8AB17 /* LaunchScreen.storyboard in Resources */,
+				AB9D0201211789F20068826C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AB9D01F2211789F20068826C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB3CAFCD211E207D006D182C /* MainCharacter.cpp in Sources */,
+				AB9C7168211B2FB6005763A2 /* ShaderManager.cpp in Sources */,
+				AB6A0D9E211CE7EE001D60C0 /* Scene.cpp in Sources */,
+				AB3CAFF421204EEC006D182C /* PipesManager.cpp in Sources */,
+				AB3CAFEE211F3CA7006D182C /* Pipe.cpp in Sources */,
+				AB9D021F21179A1D0068826C /* GameScene.cpp in Sources */,
+				AB9D01FE211789F20068826C /* OpenGLViewController.mm in Sources */,
+				AB9C7118211A0781005763A2 /* GameObject.cpp in Sources */,
+				AB6736E3211B8D8D004E2870 /* Camera.cpp in Sources */,
+				AB9C7121211A0A76005763A2 /* Utils.cpp in Sources */,
+				AB3CAFEB211EE980006D182C /* CirclePhysicsBody.cpp in Sources */,
+				AB3CAFE8211ED320006D182C /* PhysicsBody.cpp in Sources */,
+				AB9D0218211792800068826C /* Application.cpp in Sources */,
+				AB9D0209211789F40068826C /* main.m in Sources */,
+				AB9C711C211A0826005763A2 /* PhysicsEngine.cpp in Sources */,
+				AB9D01FB211789F20068826C /* AppDelegate.m in Sources */,
+				AB9C7165211B28B3005763A2 /* GLView.m in Sources */,
+				AB3CAFF1211F3EC4006D182C /* RectanglePhysicsBody.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AB9D01FF211789F20068826C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB9D0200211789F20068826C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ABDC469E2123677C00B8AB17 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABDC469F2123677C00B8AB17 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AB9D020A211789F40068826C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AB9D020B211789F40068826C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AB9D020D211789F40068826C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5BV9N7T2JM;
+				INFOPLIST_FILE = "$(SRCROOT)/Project/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "Abelix.Abelix-Zeptoplab-Test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AB9D020E211789F40068826C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5BV9N7T2JM;
+				INFOPLIST_FILE = "$(SRCROOT)/Project/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "Abelix.Abelix-Zeptoplab-Test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AB9D01F1211789F20068826C /* Build configuration list for PBXProject "OpenGLEsGameFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB9D020A211789F40068826C /* Debug */,
+				AB9D020B211789F40068826C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB9D020C211789F40068826C /* Build configuration list for PBXNativeTarget "OpenGLEsGameFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB9D020D211789F40068826C /* Debug */,
+				AB9D020E211789F40068826C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AB9D01EE211789F20068826C /* Project object */;
+}
