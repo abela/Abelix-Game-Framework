@@ -1,5 +1,5 @@
 # Abelix Game Framework
-This project represents a Game Engine with basic features(at this moment :) )
+This project represents a Game Engine written on C++ with basic features(at this moment :) )
 1. Basic Game framework architecture
 
 2. Basic OpenGL Renderer - Draw basic square, rectangle and circle
