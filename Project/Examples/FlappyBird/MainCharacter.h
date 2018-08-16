@@ -42,6 +42,7 @@ namespace flappybird {
         bool isDead;
         std::unique_ptr <physics::CirclePhysicsBody> m_physicsBody;
         void Jump();
+        //
     };
 }
 
