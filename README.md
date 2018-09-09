@@ -1,5 +1,17 @@
 # Abelix Game Framework
 
+V0.2:
+- Added Texture loading and drawing
+
+- added multiple shaders - unlit_color for drawing primitives, unlit_texture for drawing textures
+
+- Added more touch events - touchesEnded, touchesMoved
+
+- Added ExamplesManager for separating different game examples based on this framework 
+
+- More incapsulation added to ShaderManager
+
+
 V0.1:
 1. Basic Game framework architecture
 

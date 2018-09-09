@@ -6,18 +6,18 @@
 //  Copyright © 2018 Giorgi Abelashvili. All rights reserved.
 //
 
-#include "GameScene.h"
+#include "FlappyBirdGameScene.h"
 #include <iostream>
 #include "GameObject.h"
-#include "MainCharacter.h"
+#include "Bird.h"
 #include "Scene.h"
 
 
 namespace flappybird
 {
-    GameScene::GameScene() : m_mainCharacter(new flappybird::MainCharacter(utils::Point3D<float>(0,0,-4.0),
+    FlappyBirdGameScene::FlappyBirdGameScene() : m_mainCharacter(new flappybird::Bird(utils::Point3D<float>(0,0,-4.0),
                                                                            utils::Point3D<float>(0.5f,0.5f,0.5f),
-                                                                           utils::Point3D<float>(0.0,0.0,1.0))),
+                                                                           utils::Point3D<float>(1.0,1.0,1.0))),
                                             m_floor(new flappybird::Pipe(utils::Point3D<float>(0,9,-5),
                                                                          utils::Point3D<float>(8,0.5f,0.5f),
                                                                          utils::Point3D<float>(1,0.0,0.0))),
@@ -31,50 +31,52 @@ namespace flappybird
         //
     }
     
-    GameScene * GameScene::GetNewScene()
+    FlappyBirdGameScene * FlappyBirdGameScene::GetNewScene()
     {
-        return new GameScene();
+        return new FlappyBirdGameScene();
     }
     
-    GameScene::~GameScene()
+    FlappyBirdGameScene::~FlappyBirdGameScene()
     {
         std::cout<<"destroying game scene"<<std::endl;
         UnloadScene();
     }
     // custom scene initializer
-    void GameScene::LoadScene()
+    void FlappyBirdGameScene::LoadScene()
     {
         Scene::LoadScene();
     }
     // custom scene deinitializer
-    void GameScene::UnloadScene()
+    void FlappyBirdGameScene::UnloadScene()
     {
         Scene::UnloadScene();
         m_pipesManager.reset();
     }
-    void GameScene::Update(float deltaTime)
+    void FlappyBirdGameScene::Update(float deltaTime)
     {
         // draw every scene object
         Scene::Update(deltaTime);
         //
-        if(m_mainCharacter)
-            m_mainCharacter->Update(deltaTime);
-        //
-        if(m_pipesManager)
-            m_pipesManager->Update(deltaTime);
-        
-        if(m_floor)
-            m_floor->Update(deltaTime);
-        
-        if(m_ceilling)
-            m_ceilling->Update(deltaTime);
+        m_mainCharacter->Update(deltaTime);
+        m_pipesManager->Update(deltaTime);
+        m_floor->Update(deltaTime);
+        m_ceilling->Update(deltaTime);
         //
     }
-    void GameScene::OnTouchDown(float pointX, float pointY)
+    void FlappyBirdGameScene::OnTouchDown(float pointX, float pointY)
     {
         // handle input in main character
-        if(m_mainCharacter)
-            m_mainCharacter->TouchDownInput(pointX,pointY);
+        m_mainCharacter->TouchDownInput(pointX,pointY);
+    }
+    
+    void FlappyBirdGameScene::OnTouchUp(float pointX, float pointY)
+    {
+        
+    }
+    
+    void FlappyBirdGameScene::OnTouchMove(float pointX, float pointY)
+    {
+        
     }
     
 }

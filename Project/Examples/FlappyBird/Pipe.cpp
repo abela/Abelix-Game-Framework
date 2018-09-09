@@ -14,9 +14,11 @@ namespace flappybird {
     
     Pipe::Pipe(utils::Point3D<float>position,
                utils::Point3D<float> size,
-               utils::Point3D<float> color) : gameobject::GameObject(position,size,color),
+               utils::Point3D<float> color) : gameobject::GameSprite("pipe.png",position),
         m_physicsBody(new physics::RectanglePhysicsBody())
     {
+        SetSize(size);
+        SetColor(color);
         // initialize physics body
         m_physicsBody->physicsBodyType = physics::PhysicsBodyType::kBox;
         m_physicsBody->SetUsesGravity(false);
@@ -49,13 +51,13 @@ namespace flappybird {
     
     void Pipe::Update(float deltaTime)
     {
-        GameObject::Update(deltaTime);
+        GameSprite::Update(deltaTime);
         position = m_physicsBody->GetPosition();
     }
     
     void Pipe::Draw(float deltaTime)
     {
-        GameObject::Draw(deltaTime);
+        GameSprite::Draw(deltaTime);
     }
     
     void Pipe::OnCollisionEnter(physics::PhysicsBody *otherBody)

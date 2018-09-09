@@ -24,15 +24,13 @@ namespace gameobject {
         this->size = size;
         this->color = color;
         //
-        // read shader attributes
-        m_aPosition = glGetAttribLocation(ShaderManagerInstance.GetProgram(), utils::Constants::SHADER_ATTRIB_POSITION_VAR);
-        m_aColor = glGetAttribLocation(ShaderManagerInstance.GetProgram(), utils::Constants::SHADER_ATTRIB_COLOR_VAR);
-        m_uModelview = glGetUniformLocation(ShaderManagerInstance.GetProgram(), utils::Constants::SHADER_UNIFORM_MATRIX_VAR);
+        CompileShaders();
     }
     
     GameObject::GameObject(utils::Point3D<float>pos)
     {
-        
+        this->position = pos;
+        CompileShaders();
     }
     
     GameObject::~GameObject()
@@ -89,6 +87,14 @@ namespace gameobject {
         return scale;
     }
     
+    void GameObject::CompileShaders()
+    {
+        // read shader attributes
+        m_aPosition = glGetAttribLocation(ShaderManagerInstance.GetUnlitColorProgram(), utils::Constants::SHADER_ATTRIB_POSITION_VAR);
+        m_aColor = glGetAttribLocation(ShaderManagerInstance.GetUnlitColorProgram(), utils::Constants::SHADER_ATTRIB_COLOR_VAR);
+        m_uModelview = glGetUniformLocation(ShaderManagerInstance.GetUnlitColorProgram(), utils::Constants::SHADER_UNIFORM_MATRIX_VAR);
+    }
+    
     void GameObject::Update(float deltaTime)
     {
         SetModelView();
@@ -96,6 +102,7 @@ namespace gameobject {
     }
     void GameObject::Draw(float deltaTime)
     {
+        glUseProgram(ShaderManagerInstance.GetUnlitColorProgram());
         // Define geometry
         GLfloat square[] = {
             -size.X, -size.Y, -size.Z,

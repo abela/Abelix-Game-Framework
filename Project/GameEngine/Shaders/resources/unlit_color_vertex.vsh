@@ -9,6 +9,7 @@ uniform mat4 u_projectionMat;
 
 varying vec3 v_color;
 
+
 void main() {
     
     v_color = a_color;

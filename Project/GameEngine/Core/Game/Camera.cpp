@@ -21,7 +21,7 @@ namespace game
         this->m_near = m_near;
         this->m_far = m_far;
         //
-        m_uProjection = glGetUniformLocation(ShaderManagerInstance.GetProgram(), utils::Constants::SHADER_UNIFORM_PROJ_MATRIX_VAR);
+        m_uProjection = glGetUniformLocation(ShaderManagerInstance.GetUnlitColorProgram(), utils::Constants::SHADER_UNIFORM_PROJ_MATRIX_VAR);
         //
         std::cout<<"creating camera object"<<std::endl;
         //

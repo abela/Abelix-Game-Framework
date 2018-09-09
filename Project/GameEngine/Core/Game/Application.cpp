@@ -8,7 +8,7 @@
 
 #include "Application.h"
 #include <iostream>
-#include "GameScene.h"
+#include "FlappyBirdGameScene.h"
 #include "PhysicsEngine.h"
 
 namespace game
@@ -51,7 +51,7 @@ namespace game
         PhysicsEngineInstance.Restart();
         
         // reinstantiate game scene again
-        ReplaceScene(flappybird::GameScene::GetNewScene());
+        ReplaceScene(flappybird::FlappyBirdGameScene::GetNewScene());
     }
     
     void Application::OnApplicationTouchInputDown(float touchX, float touchY)
@@ -59,5 +59,19 @@ namespace game
         // handle input on current scene
         if(m_currentScene)
             m_currentScene->OnTouchDown(touchX, touchY);
+    }
+    
+    void Application::OnApplicationTouchInputUp(float touchX, float touchY)
+    {
+        // handle input on current scene
+        if(m_currentScene)
+            m_currentScene->OnTouchUp(touchX, touchY);
+    }
+    
+    void Application::OnApplicationTouchInputMove(float touchX, float touchY)
+    {
+        // handle input on current scene
+        if(m_currentScene)
+            m_currentScene->OnTouchMove(touchX, touchY);
     }
 }

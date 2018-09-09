@@ -15,5 +15,7 @@ namespace utils {
     const GLchar *Constants::SHADER_ATTRIB_COLOR_VAR = "a_color";
     const GLchar *Constants::SHADER_UNIFORM_MATRIX_VAR = "u_modelViewMat";
     const GLchar *Constants::SHADER_UNIFORM_PROJ_MATRIX_VAR = "u_projectionMat";
+    const GLchar *Constants::SHADER_TEXTURE_COORD_VAR = "a_texCoordIn";
+    const GLchar *Constants::SHADER_TEXTURE_VAR = "Texture";
     const int Constants::GLOBAL_GRAVITY_CONST = -20.0f; // game is based on any gravity const
 }

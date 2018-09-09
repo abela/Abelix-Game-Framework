@@ -10,12 +10,12 @@
 #define Pipe_hpp
 
 #include <stdio.h>
-#include "GameObject.h"
+#include "GameSprite.h"
 #include "RectanglePhysicsBody.h"
 #include "ICollisionEventListener.h"
 
 namespace flappybird {
-    class Pipe : public gameobject::GameObject, public physics::ICollisionEventListener
+    class Pipe : public gameobject::GameSprite, public physics::ICollisionEventListener
     {
     public:
         Pipe(utils::Point3D<float>position,

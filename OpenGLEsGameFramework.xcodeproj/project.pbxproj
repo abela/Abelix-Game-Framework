@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB3CAFCD211E207D006D182C /* MainCharacter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB3CAFCB211E207D006D182C /* MainCharacter.cpp */; };
+		AB10E787213BFCC5009648B6 /* ExamplesManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB10E785213BFCC5009648B6 /* ExamplesManager.cpp */; };
+		AB10E78A213C0827009648B6 /* GameSprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB10E788213C0827009648B6 /* GameSprite.mm */; };
+		AB10E78E213C0BCB009648B6 /* AvoiderGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB10E78C213C0BCB009648B6 /* AvoiderGameScene.cpp */; };
+		AB10E791213C0FF9009648B6 /* car.png in Resources */ = {isa = PBXBuildFile; fileRef = AB10E790213C0FF9009648B6 /* car.png */; };
+		AB10E794213C355B009648B6 /* Car.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB10E792213C355B009648B6 /* Car.cpp */; };
+		AB3CAFCD211E207D006D182C /* Bird.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB3CAFCB211E207D006D182C /* Bird.cpp */; };
 		AB3CAFE8211ED320006D182C /* PhysicsBody.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB3CAFE6211ED320006D182C /* PhysicsBody.cpp */; };
 		AB3CAFEB211EE980006D182C /* CirclePhysicsBody.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB3CAFE9211EE980006D182C /* CirclePhysicsBody.cpp */; };
 		AB3CAFEE211F3CA7006D182C /* Pipe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB3CAFEC211F3CA7006D182C /* Pipe.cpp */; };
@@ -22,8 +27,8 @@
 		AB9C7128211A1D7A005763A2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9C7126211A1D7A005763A2 /* Foundation.framework */; };
 		AB9C712A211A1D93005763A2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9C7129211A1D93005763A2 /* QuartzCore.framework */; };
 		AB9C712C211A1D9E005763A2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9C712B211A1D9E005763A2 /* CoreGraphics.framework */; };
-		AB9C7161211B25D2005763A2 /* VertexShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = AB9C715F211B25D2005763A2 /* VertexShader.vsh */; };
-		AB9C7162211B25D2005763A2 /* FragmentShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = AB9C7160211B25D2005763A2 /* FragmentShader.fsh */; };
+		AB9C7161211B25D2005763A2 /* unlit_color_vertex.vsh in Resources */ = {isa = PBXBuildFile; fileRef = AB9C715F211B25D2005763A2 /* unlit_color_vertex.vsh */; };
+		AB9C7162211B25D2005763A2 /* unlit_color_fragment.fsh in Resources */ = {isa = PBXBuildFile; fileRef = AB9C7160211B25D2005763A2 /* unlit_color_fragment.fsh */; };
 		AB9C7165211B28B3005763A2 /* GLView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9C7163211B28B3005763A2 /* GLView.m */; };
 		AB9C7168211B2FB6005763A2 /* ShaderManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB9C7166211B2FB6005763A2 /* ShaderManager.cpp */; };
 		AB9D01FB211789F20068826C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9D01FA211789F20068826C /* AppDelegate.m */; };
@@ -34,13 +39,26 @@
 		AB9D021221178AA60068826C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9D021121178AA60068826C /* OpenGLES.framework */; };
 		AB9D021421178AAE0068826C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9D021321178AAE0068826C /* GLKit.framework */; };
 		AB9D0218211792800068826C /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB9D0216211792800068826C /* Application.cpp */; };
-		AB9D021F21179A1D0068826C /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB9D021D21179A1D0068826C /* GameScene.cpp */; };
+		AB9D021F21179A1D0068826C /* FlappyBirdGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB9D021D21179A1D0068826C /* FlappyBirdGameScene.cpp */; };
+		ABD24DEE214459E900E897C1 /* bird.png in Resources */ = {isa = PBXBuildFile; fileRef = ABD24DED214459E900E897C1 /* bird.png */; };
+		ABD24DF121445AC400E897C1 /* unlit_texture_vertex.vsh in Resources */ = {isa = PBXBuildFile; fileRef = ABD24DEF21445AC300E897C1 /* unlit_texture_vertex.vsh */; };
+		ABD24DF221445AC400E897C1 /* unlit_texture_fragment.fsh in Resources */ = {isa = PBXBuildFile; fileRef = ABD24DF021445AC300E897C1 /* unlit_texture_fragment.fsh */; };
+		ABD24DF42145521F00E897C1 /* pipe.png in Resources */ = {isa = PBXBuildFile; fileRef = ABD24DF32145521F00E897C1 /* pipe.png */; };
 		ABDC46A02123677C00B8AB17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABDC469E2123677C00B8AB17 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AB3CAFCB211E207D006D182C /* MainCharacter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MainCharacter.cpp; sourceTree = "<group>"; };
-		AB3CAFCC211E207D006D182C /* MainCharacter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainCharacter.h; sourceTree = "<group>"; };
+		AB10E785213BFCC5009648B6 /* ExamplesManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ExamplesManager.cpp; sourceTree = "<group>"; };
+		AB10E786213BFCC5009648B6 /* ExamplesManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExamplesManager.h; sourceTree = "<group>"; };
+		AB10E788213C0827009648B6 /* GameSprite.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GameSprite.mm; sourceTree = "<group>"; };
+		AB10E789213C0827009648B6 /* GameSprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameSprite.h; sourceTree = "<group>"; };
+		AB10E78C213C0BCB009648B6 /* AvoiderGameScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AvoiderGameScene.cpp; sourceTree = "<group>"; };
+		AB10E78D213C0BCB009648B6 /* AvoiderGameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AvoiderGameScene.h; sourceTree = "<group>"; };
+		AB10E790213C0FF9009648B6 /* car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car.png; sourceTree = "<group>"; };
+		AB10E792213C355B009648B6 /* Car.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Car.cpp; sourceTree = "<group>"; };
+		AB10E793213C355B009648B6 /* Car.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
+		AB3CAFCB211E207D006D182C /* Bird.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Bird.cpp; sourceTree = "<group>"; };
+		AB3CAFCC211E207D006D182C /* Bird.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bird.h; sourceTree = "<group>"; };
 		AB3CAFE4211ED28F006D182C /* ICollisionEventListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICollisionEventListener.h; sourceTree = "<group>"; };
 		AB3CAFE6211ED320006D182C /* PhysicsBody.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsBody.cpp; sourceTree = "<group>"; };
 		AB3CAFE7211ED320006D182C /* PhysicsBody.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhysicsBody.h; sourceTree = "<group>"; };
@@ -67,8 +85,8 @@
 		AB9C7126211A1D7A005763A2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AB9C7129211A1D93005763A2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AB9C712B211A1D9E005763A2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		AB9C715F211B25D2005763A2 /* VertexShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = VertexShader.vsh; sourceTree = "<group>"; };
-		AB9C7160211B25D2005763A2 /* FragmentShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = FragmentShader.fsh; sourceTree = "<group>"; };
+		AB9C715F211B25D2005763A2 /* unlit_color_vertex.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = unlit_color_vertex.vsh; sourceTree = "<group>"; };
+		AB9C7160211B25D2005763A2 /* unlit_color_fragment.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = unlit_color_fragment.fsh; sourceTree = "<group>"; };
 		AB9C7163211B28B3005763A2 /* GLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLView.m; sourceTree = "<group>"; };
 		AB9C7164211B28B3005763A2 /* GLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLView.h; sourceTree = "<group>"; };
 		AB9C7166211B2FB6005763A2 /* ShaderManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderManager.cpp; sourceTree = "<group>"; };
@@ -88,8 +106,12 @@
 		AB9D0217211792800068826C /* Application.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
 		AB9D021A211798C30068826C /* Updater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Updater.h; sourceTree = "<group>"; };
 		AB9D021C211799CB0068826C /* IScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IScene.h; sourceTree = "<group>"; };
-		AB9D021D21179A1D0068826C /* GameScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
-		AB9D021E21179A1D0068826C /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		AB9D021D21179A1D0068826C /* FlappyBirdGameScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FlappyBirdGameScene.cpp; sourceTree = "<group>"; };
+		AB9D021E21179A1D0068826C /* FlappyBirdGameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlappyBirdGameScene.h; sourceTree = "<group>"; };
+		ABD24DED214459E900E897C1 /* bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird.png; sourceTree = "<group>"; };
+		ABD24DEF21445AC300E897C1 /* unlit_texture_vertex.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = unlit_texture_vertex.vsh; sourceTree = "<group>"; };
+		ABD24DF021445AC300E897C1 /* unlit_texture_fragment.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = unlit_texture_fragment.fsh; sourceTree = "<group>"; };
+		ABD24DF32145521F00E897C1 /* pipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pipe.png; sourceTree = "<group>"; };
 		ABDC469F2123677C00B8AB17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = StoryBoards/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,11 +132,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB10E78B213C0BAF009648B6 /* Avoider */ = {
+			isa = PBXGroup;
+			children = (
+				AB10E78F213C0FEB009648B6 /* Resources */,
+				AB10E78C213C0BCB009648B6 /* AvoiderGameScene.cpp */,
+				AB10E78D213C0BCB009648B6 /* AvoiderGameScene.h */,
+				AB10E792213C355B009648B6 /* Car.cpp */,
+				AB10E793213C355B009648B6 /* Car.h */,
+			);
+			path = Avoider;
+			sourceTree = "<group>";
+		};
+		AB10E78F213C0FEB009648B6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AB10E790213C0FF9009648B6 /* car.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		AB3CAFC7211E1031006D182C /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				AB9C7160211B25D2005763A2 /* FragmentShader.fsh */,
-				AB9C715F211B25D2005763A2 /* VertexShader.vsh */,
+				ABD24DF021445AC300E897C1 /* unlit_texture_fragment.fsh */,
+				ABD24DEF21445AC300E897C1 /* unlit_texture_vertex.vsh */,
+				AB9C7160211B25D2005763A2 /* unlit_color_fragment.fsh */,
+				AB9C715F211B25D2005763A2 /* unlit_color_vertex.vsh */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -122,10 +166,11 @@
 		AB3CAFC8211E1423006D182C /* FlappyBird */ = {
 			isa = PBXGroup;
 			children = (
-				AB9D021D21179A1D0068826C /* GameScene.cpp */,
-				AB9D021E21179A1D0068826C /* GameScene.h */,
-				AB3CAFCB211E207D006D182C /* MainCharacter.cpp */,
-				AB3CAFCC211E207D006D182C /* MainCharacter.h */,
+				ABD24DEC2144597900E897C1 /* Resources */,
+				AB9D021D21179A1D0068826C /* FlappyBirdGameScene.cpp */,
+				AB9D021E21179A1D0068826C /* FlappyBirdGameScene.h */,
+				AB3CAFCB211E207D006D182C /* Bird.cpp */,
+				AB3CAFCC211E207D006D182C /* Bird.h */,
 				AB3CAFEC211F3CA7006D182C /* Pipe.cpp */,
 				AB3CAFED211F3CA7006D182C /* Pipe.h */,
 				AB3CAFF221204EEC006D182C /* PipesManager.cpp */,
@@ -138,6 +183,9 @@
 			isa = PBXGroup;
 			children = (
 				AB3CAFC8211E1423006D182C /* FlappyBird */,
+				AB10E78B213C0BAF009648B6 /* Avoider */,
+				AB10E785213BFCC5009648B6 /* ExamplesManager.cpp */,
+				AB10E786213BFCC5009648B6 /* ExamplesManager.h */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -146,8 +194,10 @@
 			isa = PBXGroup;
 			children = (
 				AB9C711D211A0978005763A2 /* IGameObject.h */,
-				AB9C7116211A0781005763A2 /* GameObject.cpp */,
 				AB9C7117211A0781005763A2 /* GameObject.h */,
+				AB9C7116211A0781005763A2 /* GameObject.cpp */,
+				AB10E789213C0827009648B6 /* GameSprite.h */,
+				AB10E788213C0827009648B6 /* GameSprite.mm */,
 			);
 			path = GameObject;
 			sourceTree = "<group>";
@@ -288,6 +338,15 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
+		ABD24DEC2144597900E897C1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ABD24DF32145521F00E897C1 /* pipe.png */,
+				ABD24DED214459E900E897C1 /* bird.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -345,10 +404,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB9C7161211B25D2005763A2 /* VertexShader.vsh in Resources */,
-				AB9C7162211B25D2005763A2 /* FragmentShader.fsh in Resources */,
+				ABD24DF121445AC400E897C1 /* unlit_texture_vertex.vsh in Resources */,
+				ABD24DF42145521F00E897C1 /* pipe.png in Resources */,
+				AB10E791213C0FF9009648B6 /* car.png in Resources */,
+				AB9C7161211B25D2005763A2 /* unlit_color_vertex.vsh in Resources */,
+				AB9C7162211B25D2005763A2 /* unlit_color_fragment.fsh in Resources */,
 				AB9D0203211789F40068826C /* Assets.xcassets in Resources */,
+				ABD24DF221445AC400E897C1 /* unlit_texture_fragment.fsh in Resources */,
 				ABDC46A02123677C00B8AB17 /* LaunchScreen.storyboard in Resources */,
+				ABD24DEE214459E900E897C1 /* bird.png in Resources */,
 				AB9D0201211789F20068826C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,14 +424,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB3CAFCD211E207D006D182C /* MainCharacter.cpp in Sources */,
+				AB3CAFCD211E207D006D182C /* Bird.cpp in Sources */,
 				AB9C7168211B2FB6005763A2 /* ShaderManager.cpp in Sources */,
 				AB6A0D9E211CE7EE001D60C0 /* Scene.cpp in Sources */,
 				AB3CAFF421204EEC006D182C /* PipesManager.cpp in Sources */,
 				AB3CAFEE211F3CA7006D182C /* Pipe.cpp in Sources */,
-				AB9D021F21179A1D0068826C /* GameScene.cpp in Sources */,
+				AB10E78E213C0BCB009648B6 /* AvoiderGameScene.cpp in Sources */,
+				AB9D021F21179A1D0068826C /* FlappyBirdGameScene.cpp in Sources */,
 				AB9D01FE211789F20068826C /* OpenGLViewController.mm in Sources */,
+				AB10E794213C355B009648B6 /* Car.cpp in Sources */,
 				AB9C7118211A0781005763A2 /* GameObject.cpp in Sources */,
+				AB10E78A213C0827009648B6 /* GameSprite.mm in Sources */,
+				AB10E787213BFCC5009648B6 /* ExamplesManager.cpp in Sources */,
 				AB6736E3211B8D8D004E2870 /* Camera.cpp in Sources */,
 				AB9C7121211A0A76005763A2 /* Utils.cpp in Sources */,
 				AB3CAFEB211EE980006D182C /* CirclePhysicsBody.cpp in Sources */,

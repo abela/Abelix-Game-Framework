@@ -25,20 +25,22 @@ namespace shaders {
         //
         ShaderManager(initializer);
         //
-        void initShaders(const char *vertexShaderSource,const char *fragmentShaderSource);
+        void initUnlitColorShaders(const char *vertexShaderSource,const char *fragmentShaderSource);
+        void initUnlitTextureShaders(const char *vertexShaderSource,const char *fragmentShaderSource);
         //
         const char *GetVertexShaderSource();
         const char *GetFragmentShaderSource();
         //
-        GLuint GetProgram();
+        GLuint GetUnlitColorProgram();
+        GLuint GetUnlitTextureProgram();
+        //
+        void GlUseUnlitColorProgram();
+        void GlUseUnlitTextureProgram();
         //
     private:
         //
-        GLuint program;
-        //
-        //
-        char *m_vertexShaderSource;
-        char *m_fragmentShaderSource;
+        GLuint program_unlit_color;
+        GLuint program_unlit_texture;
         //
     };
 

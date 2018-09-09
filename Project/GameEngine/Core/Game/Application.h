@@ -34,6 +34,10 @@ namespace game {
         //
         void OnApplicationTouchInputDown(float touchX, float touchY);
         //
+        void OnApplicationTouchInputUp(float touchX, float touchY);
+        //
+        void OnApplicationTouchInputMove(float touchX, float touchY);
+        //
         void StartGame(scene::Scene *startingScene);
         //
         void RestartGame();

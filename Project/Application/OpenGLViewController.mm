@@ -17,17 +17,19 @@
 #include "Utils.h"
 #include "ShaderManager.h"
 #include "Application.h"
-#include "GameScene.h"
+#include "FlappyBirdGameScene.h"
+#include "ExamplesManager.h"
 
 
 @interface OpenGLViewController (privateMethods)
 -(void) createOpenGlContext;
--(void) setProjection;
+-(void) initShaders;
 @end
 
 @implementation OpenGLViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
@@ -75,48 +77,48 @@
         // setup viewport
         glViewport(0,  0, 1, 1);
         glClearColor(0.5, 0.5, 0.5, 1);
-        glClear(GL_COLOR_BUFFER_BIT);
-        
-        //init shaders
-        NSString *vertexShaderSource = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"VertexShader" ofType:@"vsh"] encoding:NSUTF8StringEncoding error:nil];
-        const char *vertexShaderSourceCString = [vertexShaderSource cStringUsingEncoding:NSUTF8StringEncoding];
-        
-        NSString *fragmentShaderSource = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"FragmentShader" ofType:@"fsh"] encoding:NSUTF8StringEncoding error:nil];
-        const char *fragmentShaderSourceCString = [fragmentShaderSource cStringUsingEncoding:NSUTF8StringEncoding];
         
         // initialize shaders
-        ShaderManagerInstance.initShaders(vertexShaderSourceCString, fragmentShaderSourceCString);
+        [self initShaders];
+        
+        // run some example
+        examples::ExamplesManager::Instance().RunExample(examples::Examples::kFlappyBirdExample);
         //
-        // run game
-        App.StartGame(flappybird::GameScene::GetNewScene());
     }
     else
     {
         NSLog(@"Failed to create ES context");
     }
 }
--(void) setProjection
+
+-(void) initShaders
 {
-    effect = [[GLKBaseEffect alloc] init];
-    float aspect = fabs(self.view.bounds.size.width / self.view.bounds.size.height);
-    GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(45), aspect, 0.0f, 50.0f);
-    effect.transform.projectionMatrix = projectionMatrix;
+    //init shaders
+    NSString *vertexShaderSource = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"unlit_color_vertex" ofType:@"vsh"] encoding:NSUTF8StringEncoding error:nil];
+    const char *vertexShaderSourceCString = [vertexShaderSource cStringUsingEncoding:NSUTF8StringEncoding];
+    //
+    NSString *fragmentShaderSource = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"unlit_color_fragment" ofType:@"fsh"] encoding:NSUTF8StringEncoding error:nil];
+    const char *fragmentShaderSourceCString = [fragmentShaderSource cStringUsingEncoding:NSUTF8StringEncoding];
     
-    GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -20.0f);
-    modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, GLKMathDegreesToRadians(0), 1, 0, 0);
-    effect.transform.modelviewMatrix = modelViewMatrix;
+    // initialize unlict color shader
+    ShaderManagerInstance.initUnlitColorShaders(vertexShaderSourceCString, fragmentShaderSourceCString);
+    //
+    vertexShaderSource = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"unlit_texture_vertex" ofType:@"vsh"] encoding:NSUTF8StringEncoding error:nil];
+    const char *vertexShaderUnlitTextureSourceCString = [vertexShaderSource cStringUsingEncoding:NSUTF8StringEncoding];
+    
+    fragmentShaderSource = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"unlit_texture_fragment" ofType:@"fsh"] encoding:NSUTF8StringEncoding error:nil];
+    const char *fragmentShaderUnlitTextureSourceCString = [fragmentShaderSource cStringUsingEncoding:NSUTF8StringEncoding];
+    
+    // initialize unlit texture shader
+    ShaderManagerInstance.initUnlitTextureShaders(vertexShaderUnlitTextureSourceCString, fragmentShaderUnlitTextureSourceCString);
 }
 
 // main game loop - highest layer of the game architecture
 -(void) update
 {
-    glClearColor(0.5f, 0.5f, 0.5f, 1);
     glClear(GL_COLOR_BUFFER_BIT);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glEnable(GL_BLEND);
-    
-    // update application - our application main game loop
-    App.Update((float)self.timeSinceLastDraw);
+    // update example
+    examples::ExamplesManager::Instance().Update((float)self.timeSinceLastDraw);
     
     // Present renderbuffer
     [openGlContext presentRenderbuffer:GL_RENDERBUFFER];
@@ -126,7 +128,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+// application touch begin
 -(void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     //
@@ -134,6 +136,26 @@
     CGPoint touchLocation = [touch locationInView:self.view];
     //
     App.OnApplicationTouchInputDown(touchLocation.x, touchLocation.y);
+}
+
+// application touch moved
+-(void) touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    //
+    UITouch *touch = [[event allTouches] anyObject];
+    CGPoint touchLocation = [touch locationInView:self.view];
+    //
+    App.OnApplicationTouchInputMove(touchLocation.x, touchLocation.y);
+}
+
+// application touch ended
+-(void) touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    //
+    UITouch *touch = [[event allTouches] anyObject];
+    CGPoint touchLocation = [touch locationInView:self.view];
+    //
+    App.OnApplicationTouchInputUp(touchLocation.x, touchLocation.y);
 }
 
 @end

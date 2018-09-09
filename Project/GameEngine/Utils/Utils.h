@@ -108,6 +108,8 @@ namespace utils {
         static const GLchar* SHADER_ATTRIB_POSITION_VAR;
         static const GLchar* SHADER_ATTRIB_COLOR_VAR;
         static const GLchar* SHADER_UNIFORM_MATRIX_VAR;
+        static const GLchar* SHADER_TEXTURE_COORD_VAR;
+        static const GLchar* SHADER_TEXTURE_VAR;
         static const GLchar* SHADER_UNIFORM_PROJ_MATRIX_VAR;
         static const int GLOBAL_GRAVITY_CONST;
     };

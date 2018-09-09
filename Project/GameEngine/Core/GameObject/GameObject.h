@@ -46,7 +46,7 @@ namespace gameobject {
         
         void Draw(float deltaTime) override;
         virtual void SetModelView();
-        
+        virtual void CompileShaders();
         GLuint program;
         GLuint m_vertexBuffer;
         GLuint m_indexBuffer;

@@ -13,33 +13,35 @@
 #include "Scene.h"
 #include "GameObject.h"
 #include "Camera.h"
-#include "MainCharacter.h"
+#include "Bird.h"
 #include "Pipe.h"
 #include "PipesManager.h"
+#include "Car.h"
 
 namespace flappybird
 {
-    class GameScene : public scene::Scene, public scene::SceneBase<GameScene>
+    class FlappyBirdGameScene : public scene::Scene, public scene::SceneBase<FlappyBirdGameScene>
     {
     public:
         
-        GameScene();
-        ~GameScene();
+        FlappyBirdGameScene();
+        ~FlappyBirdGameScene();
         void Update(float deltaTime) override;
-        static GameScene *GetNewScene();
+        static FlappyBirdGameScene *GetNewScene();
     protected:
         void LoadScene() override;
         void UnloadScene() override;
         void OnTouchDown(float pointX, float pointY) override;
+        void OnTouchUp(float pointX, float pointY) override;
+        void OnTouchMove(float pointX, float pointY) override;
     private:
-        std::unique_ptr <flappybird::MainCharacter> m_mainCharacter;
+        std::unique_ptr <flappybird::Bird> m_mainCharacter;
         std::unique_ptr <flappybird::PipesManager> m_pipesManager;
         //
         std::unique_ptr <flappybird::Pipe> m_floor;
         std::unique_ptr <flappybird::Pipe> m_ceilling;
         //
     };
-
 }
 
 

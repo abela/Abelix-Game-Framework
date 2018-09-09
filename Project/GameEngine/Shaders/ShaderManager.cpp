@@ -20,35 +20,27 @@ namespace shaders {
         std::cout<<"creating shader manager object"<<std::endl;
     }
     
-    const char *ShaderManager::GetVertexShaderSource()
+    GLuint ShaderManager::GetUnlitColorProgram()
     {
-        return m_vertexShaderSource;
-    }
-    const char *ShaderManager::GetFragmentShaderSource()
-    {
-        return m_fragmentShaderSource;
+        return program_unlit_color;
     }
     
-    GLuint ShaderManager::GetProgram()
+    GLuint ShaderManager::GetUnlitTextureProgram()
     {
-        return program;
+        return program_unlit_texture;
     }
     
     ShaderManager::~ShaderManager()
     {
         std::cout<<"destroying shadermanager object"<<std::endl;
     }
-    void ShaderManager::initShaders(const char *vertexShaderSource, const char *fragmentShaderSource)
+    
+    
+    
+    void ShaderManager::initUnlitColorShaders(const char *vertexShaderSource, const char *fragmentShaderSource)
     {
-        m_vertexShaderSource = (char*)malloc(sizeof(char) * strlen(vertexShaderSource));
-        m_fragmentShaderSource = (char*)malloc(sizeof(char) * strlen(fragmentShaderSource));
-        //
-        //
-        strcpy(m_vertexShaderSource, vertexShaderSource);
-        strcpy(m_fragmentShaderSource, fragmentShaderSource);
-        //
         GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
-        glShaderSource(vertexShader, 1, &m_vertexShaderSource, NULL);
+        glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
         glCompileShader(vertexShader);
         //
         GLchar errorLog[255] = "";
@@ -58,19 +50,54 @@ namespace shaders {
         // Create and compile fragment shader
         //
         GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-        glShaderSource(fragmentShader, 1, &m_fragmentShaderSource, NULL);
+        glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
         glCompileShader(fragmentShader);
         errorLog[0] = 0;
         glGetShaderInfoLog(fragmentShader, 255, &outputLength, errorLog);
         printf("%s\n", errorLog);
         //
         // Create and link program
-        program = glCreateProgram();
-        glAttachShader(program, vertexShader);
-        glAttachShader(program, fragmentShader);
-        glLinkProgram(program);
-        // Use program
-        glUseProgram(program);
+        program_unlit_color = glCreateProgram();
+        glAttachShader(program_unlit_color, vertexShader);
+        glAttachShader(program_unlit_color, fragmentShader);
+        glLinkProgram(program_unlit_color);
         //
+    }
+    
+    void ShaderManager::initUnlitTextureShaders(const char *vertexShaderSource, const char *fragmentShaderSource)
+    {
+        GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
+        glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
+        glCompileShader(vertexShader);
+        //
+        GLchar errorLog[255] = "";
+        GLsizei outputLength = 0;
+        glGetShaderInfoLog(vertexShader, 255, &outputLength, errorLog);
+        printf("%s\n", errorLog);
+        // Create and compile fragment shader
+        //
+        GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+        glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
+        glCompileShader(fragmentShader);
+        errorLog[0] = 0;
+        glGetShaderInfoLog(fragmentShader, 255, &outputLength, errorLog);
+        printf("%s\n", errorLog);
+        //
+        // Create and link program
+        program_unlit_texture = glCreateProgram();
+        glAttachShader(program_unlit_texture, vertexShader);
+        glAttachShader(program_unlit_texture, fragmentShader);
+        glLinkProgram(program_unlit_texture);
+        //
+    }
+    
+    void ShaderManager::GlUseUnlitColorProgram()
+    {
+        
+    }
+    
+    void ShaderManager::GlUseUnlitTextureProgram()
+    {
+        
     }
 }

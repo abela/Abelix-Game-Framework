@@ -11,21 +11,21 @@
 
 #include <stdio.h>
 #include <memory>
-#include "GameObject.h"
+#include "GameSprite.h"
 #include "CirclePhysicsBody.h"
 
 namespace flappybird {
 
-    class MainCharacter : public gameobject::GameObject, public physics::ICollisionEventListener
+    class Bird : public gameobject::GameSprite, public physics::ICollisionEventListener
     {
     public:
-        MainCharacter() = default;
+        Bird() = default;
         //
-        MainCharacter(utils::Point3D<float>position,
+        Bird(utils::Point3D<float>position,
                       utils::Point3D<float> size,
                       utils::Point3D<float> color);
         //
-        ~MainCharacter();
+        ~Bird();
         
         void Update(float deltaTime) override;
         void TouchDownInput(float posX, float posY);
@@ -35,8 +35,6 @@ namespace flappybird {
         // register collision listener event
         void OnCollisionEnter(physics::PhysicsBody *otherBody) override;
         //
-    protected:
-        void Draw(float deltaTime) override;
     private:
         float jumpImpulse;
         bool isDead;
