@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1BB5B46F23F336BF00901D46 /* unlit_texture_vertex.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 1BB5B46D23F336BF00901D46 /* unlit_texture_vertex.vsh */; };
+		1BB5B47023F336BF00901D46 /* unlit_texture_fragment.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 1BB5B46E23F336BF00901D46 /* unlit_texture_fragment.fsh */; };
 		AB10E787213BFCC5009648B6 /* ExamplesManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB10E785213BFCC5009648B6 /* ExamplesManager.cpp */; };
 		AB10E78A213C0827009648B6 /* GameSprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB10E788213C0827009648B6 /* GameSprite.mm */; };
 		AB10E78E213C0BCB009648B6 /* AvoiderGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB10E78C213C0BCB009648B6 /* AvoiderGameScene.cpp */; };
@@ -41,13 +43,13 @@
 		AB9D0218211792800068826C /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB9D0216211792800068826C /* Application.cpp */; };
 		AB9D021F21179A1D0068826C /* FlappyBirdGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB9D021D21179A1D0068826C /* FlappyBirdGameScene.cpp */; };
 		ABD24DEE214459E900E897C1 /* bird.png in Resources */ = {isa = PBXBuildFile; fileRef = ABD24DED214459E900E897C1 /* bird.png */; };
-		ABD24DF121445AC400E897C1 /* unlit_texture_vertex.vsh in Resources */ = {isa = PBXBuildFile; fileRef = ABD24DEF21445AC300E897C1 /* unlit_texture_vertex.vsh */; };
-		ABD24DF221445AC400E897C1 /* unlit_texture_fragment.fsh in Resources */ = {isa = PBXBuildFile; fileRef = ABD24DF021445AC300E897C1 /* unlit_texture_fragment.fsh */; };
 		ABD24DF42145521F00E897C1 /* pipe.png in Resources */ = {isa = PBXBuildFile; fileRef = ABD24DF32145521F00E897C1 /* pipe.png */; };
 		ABDC46A02123677C00B8AB17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABDC469E2123677C00B8AB17 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1BB5B46D23F336BF00901D46 /* unlit_texture_vertex.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = unlit_texture_vertex.vsh; sourceTree = "<group>"; };
+		1BB5B46E23F336BF00901D46 /* unlit_texture_fragment.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = unlit_texture_fragment.fsh; sourceTree = "<group>"; };
 		AB10E785213BFCC5009648B6 /* ExamplesManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ExamplesManager.cpp; sourceTree = "<group>"; };
 		AB10E786213BFCC5009648B6 /* ExamplesManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExamplesManager.h; sourceTree = "<group>"; };
 		AB10E788213C0827009648B6 /* GameSprite.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GameSprite.mm; sourceTree = "<group>"; };
@@ -109,8 +111,6 @@
 		AB9D021D21179A1D0068826C /* FlappyBirdGameScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FlappyBirdGameScene.cpp; sourceTree = "<group>"; };
 		AB9D021E21179A1D0068826C /* FlappyBirdGameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlappyBirdGameScene.h; sourceTree = "<group>"; };
 		ABD24DED214459E900E897C1 /* bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird.png; sourceTree = "<group>"; };
-		ABD24DEF21445AC300E897C1 /* unlit_texture_vertex.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = unlit_texture_vertex.vsh; sourceTree = "<group>"; };
-		ABD24DF021445AC300E897C1 /* unlit_texture_fragment.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = unlit_texture_fragment.fsh; sourceTree = "<group>"; };
 		ABD24DF32145521F00E897C1 /* pipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pipe.png; sourceTree = "<group>"; };
 		ABDC469F2123677C00B8AB17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = StoryBoards/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,8 +155,8 @@
 		AB3CAFC7211E1031006D182C /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				ABD24DF021445AC300E897C1 /* unlit_texture_fragment.fsh */,
-				ABD24DEF21445AC300E897C1 /* unlit_texture_vertex.vsh */,
+				1BB5B46E23F336BF00901D46 /* unlit_texture_fragment.fsh */,
+				1BB5B46D23F336BF00901D46 /* unlit_texture_vertex.vsh */,
 				AB9C7160211B25D2005763A2 /* unlit_color_fragment.fsh */,
 				AB9C715F211B25D2005763A2 /* unlit_color_vertex.vsh */,
 			);
@@ -404,15 +404,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABD24DF121445AC400E897C1 /* unlit_texture_vertex.vsh in Resources */,
+				1BB5B46F23F336BF00901D46 /* unlit_texture_vertex.vsh in Resources */,
 				ABD24DF42145521F00E897C1 /* pipe.png in Resources */,
 				AB10E791213C0FF9009648B6 /* car.png in Resources */,
 				AB9C7161211B25D2005763A2 /* unlit_color_vertex.vsh in Resources */,
 				AB9C7162211B25D2005763A2 /* unlit_color_fragment.fsh in Resources */,
 				AB9D0203211789F40068826C /* Assets.xcassets in Resources */,
-				ABD24DF221445AC400E897C1 /* unlit_texture_fragment.fsh in Resources */,
 				ABDC46A02123677C00B8AB17 /* LaunchScreen.storyboard in Resources */,
 				ABD24DEE214459E900E897C1 /* bird.png in Resources */,
+				1BB5B47023F336BF00901D46 /* unlit_texture_fragment.fsh in Resources */,
 				AB9D0201211789F20068826C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
