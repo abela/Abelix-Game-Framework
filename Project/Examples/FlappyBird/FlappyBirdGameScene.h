@@ -20,14 +20,14 @@
 
 namespace flappybird
 {
-    class FlappyBirdGameScene : public scene::Scene, public scene::SceneBase<FlappyBirdGameScene>
+    class FlappyBirdGameScene : public scene::Scene, public scene::BaseScene<FlappyBirdGameScene>
     {
     public:
         
         FlappyBirdGameScene();
         ~FlappyBirdGameScene();
         void Update(float deltaTime) override;
-        static FlappyBirdGameScene *GetNewScene();
+        static FlappyBirdGameScene *newScene();
     protected:
         void LoadScene() override;
         void UnloadScene() override;

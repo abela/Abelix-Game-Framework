@@ -31,7 +31,7 @@ namespace flappybird
         //
     }
     
-    FlappyBirdGameScene * FlappyBirdGameScene::GetNewScene()
+    FlappyBirdGameScene * FlappyBirdGameScene::newScene()
     {
         return new FlappyBirdGameScene();
     }

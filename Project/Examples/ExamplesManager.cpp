@@ -29,10 +29,9 @@ namespace examples {
     {
         switch (currentExample) {
             case kFlappyBirdExample:
-                App.StartGame(flappybird::FlappyBirdGameScene::GetNewScene());
+                App.StartGame(scene::BaseScene<flappybird::FlappyBirdGameScene>::GetNewScene());
                 break;
             case kAvoiderExample:
-                App.StartGame(avoider::AvoiderGameScene::GetNewScene());
                 break;
             case kBubblePopExample:
                 break;

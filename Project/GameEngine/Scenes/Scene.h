@@ -19,34 +19,23 @@
 
 namespace scene
 {
-    // alternative of static inheritance, i.e. static virtual functions
     template <typename T>
-    struct SceneStaticFuncs
-    {
-         T* (*getScene)(void);
-    };
-    
-    
-    template <typename T>
-    class SceneBase
+    class BaseScene
     {
     public:
-        SceneStaticFuncs<T> sceneStruct;
-        void FillPointers() {
-            sceneStruct.getScene = &T::GetNewScene;
-        }
-        SceneBase() {
-            FillPointers();
-        }
+        static T *GetNewScene()
+        {
+            return T::newScene();
+        };
     };
 
-    class Scene : public IScene, public SceneBase<Scene>
+    class Scene : public IScene, public BaseScene<Scene>
     {
     public:
         Scene();
         virtual ~Scene();
         void Update(float deltaTime) override;
-        static Scene *GetNewScene();
+        static Scene *newScene();
     protected:
         void LoadScene() override;
         void UnloadScene() override;

@@ -29,7 +29,6 @@ namespace scene {
     {
     public:
         virtual ~IScene() {}
-        static IScene *GetNewScene();
         virtual void OnTouchDown(float pointX, float pointY) = 0;
         virtual void OnTouchUp(float pointX, float pointY) = 0;
         virtual void OnTouchMove(float pointX, float pointY) = 0;

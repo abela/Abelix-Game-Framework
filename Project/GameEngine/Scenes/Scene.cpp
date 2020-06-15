@@ -34,7 +34,7 @@ namespace scene
     {
         
     }
-    Scene * Scene::GetNewScene()
+    Scene * Scene::newScene()
     {
         return nullptr;
     }

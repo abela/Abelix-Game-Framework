@@ -18,14 +18,14 @@
 
 namespace avoider
 {
-    class AvoiderGameScene : public scene::Scene, public scene::SceneBase<AvoiderGameScene>
+    class AvoiderGameScene : public scene::Scene, public scene::BaseScene<AvoiderGameScene>
     {
     public:
         
         AvoiderGameScene();
         ~AvoiderGameScene();
         void Update(float deltaTime) override;
-        static AvoiderGameScene *GetNewScene();
+        AvoiderGameScene *newScene();
     protected:
         void LoadScene() override;
         void UnloadScene() override;

@@ -51,7 +51,7 @@ namespace game
         PhysicsEngineInstance.Restart();
         
         // reinstantiate game scene again
-        ReplaceScene(flappybird::FlappyBirdGameScene::GetNewScene());
+        ReplaceScene(scene::BaseScene<flappybird::FlappyBirdGameScene>::GetNewScene());
     }
     
     void Application::OnApplicationTouchInputDown(float touchX, float touchY)

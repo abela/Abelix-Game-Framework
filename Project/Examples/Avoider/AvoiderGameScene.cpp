@@ -19,7 +19,7 @@ namespace avoider {
         //
     }
     
-    AvoiderGameScene * AvoiderGameScene::GetNewScene()
+    AvoiderGameScene * AvoiderGameScene::newScene()
     {
         return new AvoiderGameScene();
     }
