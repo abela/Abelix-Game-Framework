@@ -38,7 +38,7 @@ namespace physics
         WorldCollisionListener();
         for(int i =0;i<m_bodies.size();i++)
         {
-            if(m_bodies[i])
+            if(m_bodies[i]!=nullptr)
             {
                 if(m_bodies[i]->IsDestroyed())
                 {
@@ -51,7 +51,7 @@ namespace physics
     }
     void PhysicsEngine::CreateBody(PhysicsBody *body)
     {
-        m_bodies.push_back(body);
+        m_bodies.emplace_back(body);
     }
     
     bool PhysicsEngine::CircleToBoxCollisionIntersection(PhysicsBody *circleBody,PhysicsBody *boxBody)
