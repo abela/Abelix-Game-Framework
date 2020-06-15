@@ -40,17 +40,11 @@ namespace game {
         //
         void StartGame(scene::Scene *startingScene);
         //
-        void RestartGame();
+        void RestartGame(scene::Scene *nextScene);
         //
     private:
-        // we alwasys have some current scene in memory
-        std::unique_ptr <scene::Scene> m_currentScene;
         //
         scene::SceneTypes currentSceneType;
-        //
-        // replace current scene
-        void ReplaceScene(scene:: Scene *nextScene);
-        //
         //
     };
 }

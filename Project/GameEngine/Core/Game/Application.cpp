@@ -10,6 +10,7 @@
 #include <iostream>
 #include "FlappyBirdGameScene.h"
 #include "PhysicsEngine.h"
+#include "SceneManager.h"
 
 namespace game
 {
@@ -29,49 +30,42 @@ namespace game
         PhysicsEngineInstance.Update(deltaTime);
         
         // update current scene
-        if(m_currentScene)
-            m_currentScene->Update(deltaTime);
-    }
-    
-    // replace any scene anytime
-    void Application::ReplaceScene(scene:: Scene *nextScene)
-    {
-        m_currentScene.reset(nextScene);
+        if(SceneManager::Instance().getCurrentScene())
+            SceneManager::Instance().getCurrentScene()->Update(deltaTime);
     }
     
     void Application::StartGame(scene::Scene *startingScene)
     {
-        ReplaceScene(startingScene);
+        SceneManager::Instance().setCurrentScene(startingScene);
     }
     
     // just replace currentscene with the same scene
-    void Application::RestartGame()
+    void Application::RestartGame(scene::Scene *nextScene)
     {
         // reset physics engine
         PhysicsEngineInstance.Restart();
         
-        // reinstantiate game scene again
-        ReplaceScene(scene::BaseScene<flappybird::FlappyBirdGameScene>::GetNewScene());
+        SceneManager::Instance().setCurrentScene(scene::BaseScene<flappybird::FlappyBirdGameScene>::GetNewScene());
     }
     
     void Application::OnApplicationTouchInputDown(float touchX, float touchY)
     {
         // handle input on current scene
-        if(m_currentScene)
-            m_currentScene->OnTouchDown(touchX, touchY);
+        if(SceneManager::Instance().getCurrentScene())
+            SceneManager::Instance().getCurrentScene()->OnTouchDown(touchX, touchY);
     }
     
     void Application::OnApplicationTouchInputUp(float touchX, float touchY)
     {
         // handle input on current scene
-        if(m_currentScene)
-            m_currentScene->OnTouchUp(touchX, touchY);
+        if(SceneManager::Instance().getCurrentScene())
+            SceneManager::Instance().getCurrentScene()->OnTouchUp(touchX, touchY);
     }
     
     void Application::OnApplicationTouchInputMove(float touchX, float touchY)
     {
         // handle input on current scene
-        if(m_currentScene)
-            m_currentScene->OnTouchMove(touchX, touchY);
+        if(SceneManager::Instance().getCurrentScene())
+            SceneManager::Instance().getCurrentScene()->OnTouchMove(touchX, touchY);
     }
 }

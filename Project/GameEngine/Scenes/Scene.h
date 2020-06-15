@@ -33,12 +33,16 @@ namespace scene
     {
     public:
         Scene();
-        virtual ~Scene();
+        ~Scene();
         void Update(float deltaTime) override;
         static Scene *newScene();
-    protected:
         void LoadScene() override;
         void UnloadScene() override;
+        void OnTouchDown(float pointX, float pointY) override;
+        void OnTouchUp(float pointX, float pointY) override;
+        void OnTouchMove(float pointX, float pointY) override;
+        
+    protected:
         //
         std::unique_ptr <game::Camera> m_mainCamera;
     };

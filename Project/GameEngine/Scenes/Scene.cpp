@@ -38,4 +38,17 @@ namespace scene
     {
         return nullptr;
     }
+
+    void Scene::OnTouchDown(float pointX, float pointY)
+    {
+        
+    }
+    void Scene::OnTouchUp(float pointX, float pointY)
+    {
+        
+    }
+    void Scene::OnTouchMove(float pointX, float pointY)
+    {
+        
+    }
 }

@@ -19,6 +19,7 @@
 #include <math.h>
 #include "PhysicsEngine.h"
 #include "Application.h"
+#include "FlappyBirdGameScene.h"
 
 namespace flappybird {
     
@@ -88,7 +89,7 @@ namespace flappybird {
         {
             std::cout<<"collision to pipe"<<std::endl;
             isDead = true;
-            App.RestartGame();
+            App.RestartGame(scene::BaseScene<flappybird::FlappyBirdGameScene>::GetNewScene());
         }
     }
     

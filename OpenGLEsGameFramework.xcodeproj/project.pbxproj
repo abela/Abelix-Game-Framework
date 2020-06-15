@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B470D1C2497FE7600568903 /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B470D1A2497FE7600568903 /* SceneManager.cpp */; };
 		1BB5B46F23F336BF00901D46 /* unlit_texture_vertex.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 1BB5B46D23F336BF00901D46 /* unlit_texture_vertex.vsh */; };
 		1BB5B47023F336BF00901D46 /* unlit_texture_fragment.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 1BB5B46E23F336BF00901D46 /* unlit_texture_fragment.fsh */; };
 		AB10E787213BFCC5009648B6 /* ExamplesManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB10E785213BFCC5009648B6 /* ExamplesManager.cpp */; };
@@ -48,6 +49,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B470D1A2497FE7600568903 /* SceneManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SceneManager.cpp; sourceTree = "<group>"; };
+		1B470D1B2497FE7600568903 /* SceneManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneManager.h; sourceTree = "<group>"; };
 		1BB5B46D23F336BF00901D46 /* unlit_texture_vertex.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = unlit_texture_vertex.vsh; sourceTree = "<group>"; };
 		1BB5B46E23F336BF00901D46 /* unlit_texture_fragment.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = unlit_texture_fragment.fsh; sourceTree = "<group>"; };
 		AB10E785213BFCC5009648B6 /* ExamplesManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ExamplesManager.cpp; sourceTree = "<group>"; };
@@ -334,6 +337,8 @@
 				AB9D021C211799CB0068826C /* IScene.h */,
 				AB6A0D9C211CE7EE001D60C0 /* Scene.cpp */,
 				AB6A0D9D211CE7EE001D60C0 /* Scene.h */,
+				1B470D1B2497FE7600568903 /* SceneManager.h */,
+				1B470D1A2497FE7600568903 /* SceneManager.cpp */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -438,6 +443,7 @@
 				AB10E787213BFCC5009648B6 /* ExamplesManager.cpp in Sources */,
 				AB6736E3211B8D8D004E2870 /* Camera.cpp in Sources */,
 				AB9C7121211A0A76005763A2 /* Utils.cpp in Sources */,
+				1B470D1C2497FE7600568903 /* SceneManager.cpp in Sources */,
 				AB3CAFEB211EE980006D182C /* CirclePhysicsBody.cpp in Sources */,
 				AB3CAFE8211ED320006D182C /* PhysicsBody.cpp in Sources */,
 				AB9D0218211792800068826C /* Application.cpp in Sources */,
