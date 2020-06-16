@@ -35,11 +35,17 @@ namespace flappybird {
         // register collision listener event
         void OnCollisionEnter(physics::PhysicsBody *otherBody) override;
         //
+        bool IsDead() const;
+        //
+        void Reset();
+        //
     private:
+        utils::Point3D<float> startPosition;
         float jumpImpulse;
         bool isDead;
-        std::unique_ptr <physics::CirclePhysicsBody> m_physicsBody;
+        physics::CirclePhysicsBody *m_physicsBody;
         void Jump();
+        void createPhysicsBody();
         //
     };
 }

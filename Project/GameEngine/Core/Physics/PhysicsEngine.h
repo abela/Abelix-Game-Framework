@@ -39,7 +39,7 @@ namespace physics {
         bool CircleToBoxCollisionIntersection(PhysicsBody *circleBody,PhysicsBody *boxBody);
         //
         float globalGravity;
-        std::vector<PhysicsBody*> m_bodies;
+        std::vector<std::unique_ptr<PhysicsBody>> m_bodies;
         void WorldCollisionListener();
     };
     

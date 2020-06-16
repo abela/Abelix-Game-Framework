@@ -22,9 +22,7 @@ namespace flappybird {
         ~PipesManager();
         
         void Update(float deltaTime) override;
-        
-       
-        
+        void Reset();
     private:
         std::vector<std::unique_ptr<Pipe>> m_pipes;
         void GeneratePipe(float deltaTime);
@@ -32,7 +30,7 @@ namespace flappybird {
         float pipesGenerateTime;
         void MovePipes(float deltaTime);
         float pipesMoveSpeed;
-         void Reset();
+         
         float movingDimension;
     };
 }

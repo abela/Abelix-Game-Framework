@@ -35,6 +35,9 @@ namespace flappybird
         void OnTouchUp(float pointX, float pointY) override;
         void OnTouchMove(float pointX, float pointY) override;
     private:
+        //
+        void restart();
+        //
         std::unique_ptr <flappybird::Bird> m_mainCharacter;
         std::unique_ptr <flappybird::PipesManager> m_pipesManager;
         //

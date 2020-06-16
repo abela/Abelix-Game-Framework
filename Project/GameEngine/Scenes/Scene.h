@@ -41,7 +41,6 @@ namespace scene
         void OnTouchDown(float pointX, float pointY) override;
         void OnTouchUp(float pointX, float pointY) override;
         void OnTouchMove(float pointX, float pointY) override;
-        
     protected:
         //
         std::unique_ptr <game::Camera> m_mainCamera;

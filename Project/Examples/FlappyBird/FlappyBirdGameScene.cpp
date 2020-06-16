@@ -11,7 +11,7 @@
 #include "GameObject.h"
 #include "Bird.h"
 #include "Scene.h"
-
+#include "PhysicsEngine.h"
 
 namespace flappybird
 {
@@ -61,6 +61,11 @@ namespace flappybird
         m_pipesManager->Update(deltaTime);
         m_floor->Update(deltaTime);
         m_ceilling->Update(deltaTime);
+        
+        if(m_mainCharacter->IsDead())
+        {
+            restart();
+        }
         //
     }
     void FlappyBirdGameScene::OnTouchDown(float pointX, float pointY)
@@ -77,6 +82,13 @@ namespace flappybird
     void FlappyBirdGameScene::OnTouchMove(float pointX, float pointY)
     {
         
+    }
+
+    void FlappyBirdGameScene::restart()
+    {
+        m_mainCharacter->Reset();
+        m_pipesManager->Reset();
+        PhysicsEngineInstance.Restart();
     }
     
 }

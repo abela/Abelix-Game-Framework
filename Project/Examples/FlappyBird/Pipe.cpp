@@ -28,15 +28,14 @@ namespace flappybird {
         m_physicsBody->SetStatic(true);
         m_physicsBody->InitAABB(size);
         m_physicsBody->SetSize(size);
-        PhysicsEngineInstance.CreateBody(m_physicsBody.get());
+        PhysicsEngineInstance.CreateBody(m_physicsBody);
         std::cout<<"creating pipe Object"<<std::endl;
     }
     
     Pipe::~Pipe()
     {
-        m_physicsBody->SetDestroyed(true);
-        //m_physicsBody.reset();
         std::cout<<"destroying pipe object"<<std::endl;
+        m_physicsBody->SetDestroyed(true);
     }
     
     void Pipe::SetPosition(utils::Point3D<float> position)
@@ -62,6 +61,6 @@ namespace flappybird {
     
     void Pipe::OnCollisionEnter(physics::PhysicsBody *otherBody)
     {
-        color.Set(1, 0, 0);
+        color.Set(0, 1, 0);
     }
 }

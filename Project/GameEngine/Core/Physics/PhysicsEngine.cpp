@@ -27,7 +27,16 @@ namespace physics
     
     void PhysicsEngine::Restart()
     {
-        m_bodies.clear();
+        for(std::size_t i =0;i!=m_bodies.size();++i)
+        {
+            if(m_bodies[i]!=nullptr)
+            {
+                if(m_bodies[i]->IsDestroyed())
+                {
+                    m_bodies.erase(m_bodies.begin() + i);
+                }
+            }
+        }
     }
     
     // updat every physics body that we culd watch
@@ -36,7 +45,7 @@ namespace physics
     void PhysicsEngine::Update(float deltaTime)
     {
         WorldCollisionListener();
-        for(int i =0;i<m_bodies.size();i++)
+        for(std::size_t i =0;i!=m_bodies.size();++i)
         {
             if(m_bodies[i]!=nullptr)
             {
@@ -78,9 +87,9 @@ namespace physics
     void PhysicsEngine::WorldCollisionListener()
     {
         
-        for(int i = 0;i<m_bodies.size();i++)
+        for(std::size_t i = 0;i!=m_bodies.size();++i)
         {
-            for(int j = 1;j<m_bodies.size();j++)
+            for(size_t j = 1;j!=m_bodies.size();++j)
             {
                 // avoid collision check for two static bodies
                 if(m_bodies[i]->IsStatic() && m_bodies[j]->IsStatic())
@@ -98,7 +107,7 @@ namespace physics
                             case PhysicsBodyType::kBox:
                             {
                                 
-                                if(CircleToBoxCollisionIntersection(m_bodies[i],m_bodies[j]))
+                                if(CircleToBoxCollisionIntersection(m_bodies[i].get(),m_bodies[j].get()))
                                 {
                                     // call collision event only once
                                     if(m_bodies[i]->IsInCollision() == false || m_bodies[j]->IsInCollision() == false)
@@ -108,8 +117,8 @@ namespace physics
                                         ICollisionEventListener *circleCollisionEvent = static_cast<ICollisionEventListener*>(m_bodies[i]->GetCollisionEventListener());
                                         ICollisionEventListener *rectangleCollisionEvent = static_cast<ICollisionEventListener*>(m_bodies[j]->GetCollisionEventListener());
                                         // rise collision enter events on both sides
-                                        circleCollisionEvent->OnCollisionEnter(m_bodies[j]);
-                                        rectangleCollisionEvent->OnCollisionEnter(m_bodies[i]);
+                                        circleCollisionEvent->OnCollisionEnter(m_bodies[j].get());
+                                        rectangleCollisionEvent->OnCollisionEnter(m_bodies[i].get());
                                     }
                                     //
                                 }

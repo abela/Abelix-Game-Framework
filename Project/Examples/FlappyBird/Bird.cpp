@@ -28,8 +28,17 @@ namespace flappybird {
                                  utils::Point3D<float> color) :
     gameobject::GameSprite("bird.png",position), m_physicsBody(new physics::CirclePhysicsBody()), isDead(false), jumpImpulse(35)
     {
+        startPosition = position;
         SetSize(size);
         SetColor(color);
+        //
+        createPhysicsBody();
+        //
+        std::cout<<"creating main character"<<std::endl;
+    }
+
+    void Bird::createPhysicsBody()
+    {
         // initialize physics body
         m_physicsBody->physicsBodyType = physics::PhysicsBodyType::kCircle;
         m_physicsBody->SetUsesGravity(true);
@@ -39,9 +48,7 @@ namespace flappybird {
         m_physicsBody->SetCollisionEventListener(this);
         m_physicsBody->SetRadius(size.X);
         //
-        PhysicsEngineInstance.CreateBody(m_physicsBody.get());
-        //
-        std::cout<<"creating main character"<<std::endl;
+        PhysicsEngineInstance.CreateBody(m_physicsBody);
     }
     
     Bird::~Bird()
@@ -89,8 +96,18 @@ namespace flappybird {
         {
             std::cout<<"collision to pipe"<<std::endl;
             isDead = true;
-            App.RestartGame(scene::BaseScene<flappybird::FlappyBirdGameScene>::GetNewScene());
         }
+    }
+
+    bool Bird:: IsDead() const
+    {
+        return isDead;
+    }
+
+    void Bird::Reset()
+    {
+        isDead = false;
+        SetPosition(startPosition);
     }
     
 }

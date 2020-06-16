@@ -11,9 +11,17 @@
 #include <iostream>
 #include <random>
 
+#define PIPES_GENERATE_TIME_COUNTER 3.5f
+#define PIPES_GENERATE_TIME         3.5f
+#define PIPES_MOVE_SPEED            2
+#define PIPES_MOVING_DIMENSION      8
+
 namespace flappybird
 {
-    PipesManager::PipesManager() : pipesGenerateTimeCounter(3.5), pipesGenerateTime(3.5), pipesMoveSpeed(2), movingDimension(8)
+    PipesManager::PipesManager() : pipesGenerateTimeCounter(PIPES_GENERATE_TIME_COUNTER),
+                                    pipesGenerateTime(PIPES_GENERATE_TIME),
+                                    pipesMoveSpeed(PIPES_MOVE_SPEED),
+                                    movingDimension(PIPES_MOVING_DIMENSION)
     {
         std::cout<<"creating pipes manager object"<<std::endl;
     }
@@ -85,11 +93,10 @@ namespace flappybird
     
     void PipesManager::Reset()
     {
-        for(int i =0;i<m_pipes.size();i++)
-        {
-            m_pipes[i].reset();
-        }
         m_pipes.clear();
-        pipesGenerateTimeCounter = 0;
+        pipesGenerateTimeCounter = PIPES_GENERATE_TIME_COUNTER;
+        pipesGenerateTime = PIPES_GENERATE_TIME;
+        pipesMoveSpeed = PIPES_MOVE_SPEED;
+        movingDimension = PIPES_MOVING_DIMENSION;
     }
 }

@@ -29,7 +29,7 @@ namespace flappybird {
     protected:
         void Draw(float deltaTime) override;
     private:
-        std::unique_ptr <physics::RectanglePhysicsBody> m_physicsBody;
+        physics::RectanglePhysicsBody *m_physicsBody;
     };
 }
 
