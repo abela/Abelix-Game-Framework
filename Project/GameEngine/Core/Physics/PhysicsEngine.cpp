@@ -34,6 +34,7 @@ namespace physics
                 if(m_bodies[i]->IsDestroyed())
                 {
                     m_bodies.erase(m_bodies.begin() + i);
+                    return;
                 }
             }
         }

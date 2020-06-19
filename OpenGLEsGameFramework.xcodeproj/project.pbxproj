@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B251F11249B92F000AE6404 /* Camel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BC9F92A249B904A0062A986 /* Camel.cpp */; };
 		1B470D1C2497FE7600568903 /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B470D1A2497FE7600568903 /* SceneManager.cpp */; };
 		1BB5B46F23F336BF00901D46 /* unlit_texture_vertex.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 1BB5B46D23F336BF00901D46 /* unlit_texture_vertex.vsh */; };
 		1BB5B47023F336BF00901D46 /* unlit_texture_fragment.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 1BB5B46E23F336BF00901D46 /* unlit_texture_fragment.fsh */; };
+		1BC9F90F249A3E400062A986 /* CaravanGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BC9F90D249A3E400062A986 /* CaravanGameScene.cpp */; };
+		1BC9F912249A3F860062A986 /* CircleRandomizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BC9F910249A3F860062A986 /* CircleRandomizer.cpp */; };
+		1BC9F915249A404A0062A986 /* CircleObstacle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BC9F913249A404A0062A986 /* CircleObstacle.cpp */; };
+		1BC9F918249A52820062A986 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC9F917249A52820062A986 /* circle.png */; };
 		AB10E787213BFCC5009648B6 /* ExamplesManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB10E785213BFCC5009648B6 /* ExamplesManager.cpp */; };
 		AB10E78A213C0827009648B6 /* GameSprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB10E788213C0827009648B6 /* GameSprite.mm */; };
 		AB10E78E213C0BCB009648B6 /* AvoiderGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB10E78C213C0BCB009648B6 /* AvoiderGameScene.cpp */; };
@@ -53,6 +58,15 @@
 		1B470D1B2497FE7600568903 /* SceneManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneManager.h; sourceTree = "<group>"; };
 		1BB5B46D23F336BF00901D46 /* unlit_texture_vertex.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = unlit_texture_vertex.vsh; sourceTree = "<group>"; };
 		1BB5B46E23F336BF00901D46 /* unlit_texture_fragment.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = unlit_texture_fragment.fsh; sourceTree = "<group>"; };
+		1BC9F90D249A3E400062A986 /* CaravanGameScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CaravanGameScene.cpp; sourceTree = "<group>"; };
+		1BC9F90E249A3E400062A986 /* CaravanGameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaravanGameScene.h; sourceTree = "<group>"; };
+		1BC9F910249A3F860062A986 /* CircleRandomizer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CircleRandomizer.cpp; sourceTree = "<group>"; };
+		1BC9F911249A3F860062A986 /* CircleRandomizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleRandomizer.h; sourceTree = "<group>"; };
+		1BC9F913249A404A0062A986 /* CircleObstacle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CircleObstacle.cpp; sourceTree = "<group>"; };
+		1BC9F914249A404A0062A986 /* CircleObstacle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleObstacle.h; sourceTree = "<group>"; };
+		1BC9F917249A52820062A986 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
+		1BC9F929249B90490062A986 /* Camel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camel.h; sourceTree = "<group>"; };
+		1BC9F92A249B904A0062A986 /* Camel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camel.cpp; sourceTree = "<group>"; };
 		AB10E785213BFCC5009648B6 /* ExamplesManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ExamplesManager.cpp; sourceTree = "<group>"; };
 		AB10E786213BFCC5009648B6 /* ExamplesManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExamplesManager.h; sourceTree = "<group>"; };
 		AB10E788213C0827009648B6 /* GameSprite.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GameSprite.mm; sourceTree = "<group>"; };
@@ -135,6 +149,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BC9F90C249A3E290062A986 /* Caravan */ = {
+			isa = PBXGroup;
+			children = (
+				1BC9F916249A52790062A986 /* Resources */,
+				1BC9F90E249A3E400062A986 /* CaravanGameScene.h */,
+				1BC9F90D249A3E400062A986 /* CaravanGameScene.cpp */,
+				1BC9F911249A3F860062A986 /* CircleRandomizer.h */,
+				1BC9F910249A3F860062A986 /* CircleRandomizer.cpp */,
+				1BC9F913249A404A0062A986 /* CircleObstacle.cpp */,
+				1BC9F914249A404A0062A986 /* CircleObstacle.h */,
+				1BC9F92A249B904A0062A986 /* Camel.cpp */,
+				1BC9F929249B90490062A986 /* Camel.h */,
+			);
+			path = Caravan;
+			sourceTree = "<group>";
+		};
+		1BC9F916249A52790062A986 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1BC9F917249A52820062A986 /* circle.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		AB10E78B213C0BAF009648B6 /* Avoider */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +223,7 @@
 		AB553956212588E700E75EEF /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				1BC9F90C249A3E290062A986 /* Caravan */,
 				AB3CAFC8211E1423006D182C /* FlappyBird */,
 				AB10E78B213C0BAF009648B6 /* Avoider */,
 				AB10E785213BFCC5009648B6 /* ExamplesManager.cpp */,
@@ -413,6 +452,7 @@
 				ABD24DF42145521F00E897C1 /* pipe.png in Resources */,
 				AB10E791213C0FF9009648B6 /* car.png in Resources */,
 				AB9C7161211B25D2005763A2 /* unlit_color_vertex.vsh in Resources */,
+				1BC9F918249A52820062A986 /* circle.png in Resources */,
 				AB9C7162211B25D2005763A2 /* unlit_color_fragment.fsh in Resources */,
 				AB9D0203211789F40068826C /* Assets.xcassets in Resources */,
 				ABDC46A02123677C00B8AB17 /* LaunchScreen.storyboard in Resources */,
@@ -429,15 +469,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B251F11249B92F000AE6404 /* Camel.cpp in Sources */,
 				AB3CAFCD211E207D006D182C /* Bird.cpp in Sources */,
+				1BC9F90F249A3E400062A986 /* CaravanGameScene.cpp in Sources */,
 				AB9C7168211B2FB6005763A2 /* ShaderManager.cpp in Sources */,
 				AB6A0D9E211CE7EE001D60C0 /* Scene.cpp in Sources */,
 				AB3CAFF421204EEC006D182C /* PipesManager.cpp in Sources */,
 				AB3CAFEE211F3CA7006D182C /* Pipe.cpp in Sources */,
 				AB10E78E213C0BCB009648B6 /* AvoiderGameScene.cpp in Sources */,
+				1BC9F915249A404A0062A986 /* CircleObstacle.cpp in Sources */,
 				AB9D021F21179A1D0068826C /* FlappyBirdGameScene.cpp in Sources */,
 				AB9D01FE211789F20068826C /* OpenGLViewController.mm in Sources */,
 				AB10E794213C355B009648B6 /* Car.cpp in Sources */,
+				1BC9F912249A3F860062A986 /* CircleRandomizer.cpp in Sources */,
 				AB9C7118211A0781005763A2 /* GameObject.cpp in Sources */,
 				AB10E78A213C0827009648B6 /* GameSprite.mm in Sources */,
 				AB10E787213BFCC5009648B6 /* ExamplesManager.cpp in Sources */,

@@ -16,9 +16,7 @@
 namespace examples {
     typedef enum  {
         kFlappyBirdExample,
-        kAvoiderExample,
-        kBubblePopExample,
-        kAsteroidsExample,
+        kCaravanExample,
     } Examples;
 
     class ExamplesManager : public game::IUpdater, public utils::Singleton<ExamplesManager>

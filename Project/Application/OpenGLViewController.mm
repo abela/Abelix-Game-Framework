@@ -82,7 +82,7 @@
         [self initShaders];
         
         // run some example
-        examples::ExamplesManager::Instance().RunExample(examples::Examples::kFlappyBirdExample);
+        examples::ExamplesManager::Instance().RunExample(examples::Examples::kCaravanExample);
         //
     }
     else

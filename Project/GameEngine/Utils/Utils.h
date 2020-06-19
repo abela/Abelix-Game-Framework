@@ -15,6 +15,7 @@
 #include <memory>
 #include <mutex>
 #include <algorithm>
+#include <math.h>
 
 namespace utils {
     
@@ -53,6 +54,20 @@ namespace utils {
             return *this;
         }
         
+        inline Point3D& operator+=(const Point3D &p) {
+            X= X += p.X;
+            Y= Y += p.Y;
+            Z= Z += p.Z;
+            return *this;
+        }
+        
+        inline Point3D& operator-=(const Point3D &p) {
+            X= X -= p.X;
+            Y= Y -= p.Y;
+            Z= Z -= p.Z;
+            return *this;
+        }
+        
         inline Point3D& operator-(const Point3D &p) {
             X= X - p.X;
             Y= Y - p.Y;
@@ -83,12 +98,32 @@ namespace utils {
         
         inline bool operator==(const Point3D& lhs)
         {
-            return lhs.X ==X && lhs.Y == Y;
+            return lhs.X ==X && lhs.Y == Y && lhs.Z == Z;
         }
         
         inline bool operator!=(const float& lhs)
         {
             return lhs !=X && lhs != Y && lhs != Z;
+        }
+        
+        inline T distanceTo(const Point3D &p2)
+        {
+            return sqrt((X - p2.X) * (X - p2.X) + (Y - p2.Y) * (Y - p2.Y) + (Z - p2.Z) * (Z - p2.Z));
+        }
+        
+        inline Point3D normalize(T length) const
+        {
+            return Point3D(X/length,Y/length,Z/length);
+        }
+        
+        inline T length() const
+        {
+           return sqrt(X * X + Y * Y + Z * Z);
+        }
+        
+        inline Point3D<T> scalar(float number)
+        {
+            return Point3D(number * X, number * Y, number * Z);
         }
         
     };

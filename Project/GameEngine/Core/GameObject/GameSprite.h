@@ -16,6 +16,7 @@ namespace gameobject {
     class GameSprite : public GameObject
     {
     public:
+        GameSprite() = default;
         GameSprite(char *path,utils::Point3D<float>position);
         ~GameSprite();
     protected:

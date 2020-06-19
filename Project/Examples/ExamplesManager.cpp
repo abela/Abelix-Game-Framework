@@ -11,6 +11,7 @@
 #include "Application.h"
 #include "FlappyBirdGameScene.h"
 #include "AvoiderGameScene.h"
+#include "CaravanGameScene.h"
 
 
 namespace examples {
@@ -31,11 +32,8 @@ namespace examples {
             case kFlappyBirdExample:
                 App.StartGame(scene::BaseScene<flappybird::FlappyBirdGameScene>::GetNewScene());
                 break;
-            case kAvoiderExample:
-                break;
-            case kBubblePopExample:
-                break;
-            case kAsteroidsExample:
+            case kCaravanExample:
+                App.StartGame(scene::BaseScene<caravangame::CaravanGameScene>::GetNewScene());
                 break;
             default:
                 break;
