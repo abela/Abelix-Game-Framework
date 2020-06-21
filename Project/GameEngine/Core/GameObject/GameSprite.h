@@ -18,6 +18,7 @@ namespace gameobject {
     public:
         GameSprite() = default;
         GameSprite(char *path,utils::Point3D<float>position);
+        GameSprite(char *path,utils::Point3D<float>position,utils::Point3D<float>size, utils::Point3D<float>color);
         ~GameSprite();
     protected:
         virtual void CompileShaders() override;

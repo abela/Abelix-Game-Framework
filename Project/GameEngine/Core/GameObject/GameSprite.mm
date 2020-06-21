@@ -24,6 +24,13 @@ namespace gameobject
         LoadTexture(path);
         CompileShaders();
     }
+    GameSprite::GameSprite(char *path,utils::Point3D<float>position,utils::Point3D<float>size, utils::Point3D<float>color)
+    {
+        LoadTexture(path);
+        CompileShaders();
+        SetSize(size);
+        SetColor(color);
+    }
     //
     void GameSprite::LoadTexture(char* path)
     {

@@ -29,10 +29,11 @@ namespace caravangame
         void OnTouchDown(float pointX, float pointY) override;
     private:
         std::unique_ptr<CircleRandomizer> circleRandomizer;
-        std::unique_ptr<CircleObstacle> startPoint;
-        std::unique_ptr<CircleObstacle> endPoint;
+        std::unique_ptr<gameobject::GameSprite> startPoint;
+        std::unique_ptr<gameobject::GameSprite> endPoint;
         std::unique_ptr<Camel> mainCharacter;
         void drawCircleObstacles();
+        void randomizeStartAndEnd();
     };
 }
 #endif /* CaravanGameScene_hpp */

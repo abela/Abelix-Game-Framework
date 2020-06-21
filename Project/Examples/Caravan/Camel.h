@@ -28,7 +28,7 @@ namespace caravangame {
                         utils::Point3D<float>targetPosition);
         void UpdateWithCirclesArray(std::vector<std::unique_ptr<CircleObstacle>> &circles,float deltaTime);
         ~Camel();
-        void updateDestination(float xPos, float yPos);
+        void updateDestination(float xPos, float yPos,float startPosX);
         //
     private:
         float avoidanceForce;

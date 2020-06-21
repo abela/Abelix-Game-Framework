@@ -78,19 +78,16 @@ gameobject::GameSprite("circle.png",position), startPosition(position),moveSpeed
         if(distanceToTarget<=0.1f)
             moving = false;
         
-        pathToDraw.emplace_back(std::unique_ptr<gameobject::Line>(new gameobject::Line("circle.png",prevPosition,position,utils::Point3D<float>(1,1,1))));
+        pathToDraw.emplace_back(std::unique_ptr<gameobject::Line>(new gameobject::Line("line.png",prevPosition,position,utils::Point3D<float>(1,1,1))));
         prevPosition = position;
     }
 
 
-    void Camel::updateDestination(float xPos, float yPos)
+    void Camel::updateDestination(float xPos, float yPos, float startPosX)
     {
-        std::random_device rd; // obtain a random number from hardware
-        std::mt19937 eng(rd()); // seed the generator
-        
-        std::uniform_int_distribution<> pos_x_random(-15, 15);
-        targetPosition = utils::Point3D<float>(pos_x_random(eng), 8, position.Z);
+        targetPosition = utils::Point3D<float>(xPos, 8, position.Z);
         moving = true;
+        startPosition.Set(startPosX, startPosition.Y, startPosition.Z);
         position = startPosition;
         prevPosition = startPosition;
         pathToDraw.clear();
