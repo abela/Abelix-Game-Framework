@@ -10,9 +10,11 @@
 #define Camel_hpp
 
 #include <stdio.h>
+#include <vector>
 #include <memory>
 #include "GameSprite.h"
 #include "CircleObstacle.h"
+#include "Line.h"
 
 namespace caravangame {
 
@@ -32,9 +34,12 @@ namespace caravangame {
         float avoidanceForce;
         bool moving;
         utils::Point3D<float> startPosition;
+        utils::Point3D<float> prevPosition;
         float moveSpeed;
         utils::Point3D<float>targetPosition;
         void moveToTarget(std::vector<std::unique_ptr<CircleObstacle>> &circles);
+        std::vector<std::unique_ptr<gameobject::Line>> pathToDraw;
+        void drawPath(float deltaTime);
         //
     };
 }

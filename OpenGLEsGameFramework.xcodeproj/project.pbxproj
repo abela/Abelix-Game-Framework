@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B0706C4249F439E002494AB /* Line.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1B0706C2249F439E002494AB /* Line.mm */; };
 		1B251F11249B92F000AE6404 /* Camel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BC9F92A249B904A0062A986 /* Camel.cpp */; };
 		1B470D1C2497FE7600568903 /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B470D1A2497FE7600568903 /* SceneManager.cpp */; };
 		1BB5B46F23F336BF00901D46 /* unlit_texture_vertex.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 1BB5B46D23F336BF00901D46 /* unlit_texture_vertex.vsh */; };
@@ -54,6 +55,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B0706C2249F439E002494AB /* Line.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Line.mm; sourceTree = "<group>"; };
+		1B0706C3249F439E002494AB /* Line.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
 		1B470D1A2497FE7600568903 /* SceneManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SceneManager.cpp; sourceTree = "<group>"; };
 		1B470D1B2497FE7600568903 /* SceneManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneManager.h; sourceTree = "<group>"; };
 		1BB5B46D23F336BF00901D46 /* unlit_texture_vertex.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = unlit_texture_vertex.vsh; sourceTree = "<group>"; };
@@ -240,6 +243,8 @@
 				AB9C7116211A0781005763A2 /* GameObject.cpp */,
 				AB10E789213C0827009648B6 /* GameSprite.h */,
 				AB10E788213C0827009648B6 /* GameSprite.mm */,
+				1B0706C3249F439E002494AB /* Line.h */,
+				1B0706C2249F439E002494AB /* Line.mm */,
 			);
 			path = GameObject;
 			sourceTree = "<group>";
@@ -470,6 +475,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B251F11249B92F000AE6404 /* Camel.cpp in Sources */,
+				1B0706C4249F439E002494AB /* Line.mm in Sources */,
 				AB3CAFCD211E207D006D182C /* Bird.cpp in Sources */,
 				1BC9F90F249A3E400062A986 /* CaravanGameScene.cpp in Sources */,
 				AB9C7168211B2FB6005763A2 /* ShaderManager.cpp in Sources */,

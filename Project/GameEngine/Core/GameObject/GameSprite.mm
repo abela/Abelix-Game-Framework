@@ -69,6 +69,7 @@ namespace gameobject
     GameSprite::~GameSprite()
     {
         //
+        glDeleteTextures(1, &_mainTexture);
     }
 
     void GameSprite::Draw(float deltaTime)

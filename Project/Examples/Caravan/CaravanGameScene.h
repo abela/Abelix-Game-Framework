@@ -13,6 +13,7 @@
 #include "Scene.h"
 #include "CircleRandomizer.h"
 #include "Camel.h"
+#include "Line.h"
 
 namespace caravangame
 {

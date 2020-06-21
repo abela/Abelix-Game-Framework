@@ -27,6 +27,7 @@ gameobject::GameSprite("circle.png",position), startPosition(position),moveSpeed
         SetSize(size);
         SetColor(color);
         std::cout<<"creating camel character"<<std::endl;
+        prevPosition = startPosition;
     }
 
     void Camel::UpdateWithCirclesArray(std::vector<std::unique_ptr<CircleObstacle>> &circles, float deltaTime)
@@ -34,6 +35,16 @@ gameobject::GameSprite("circle.png",position), startPosition(position),moveSpeed
         GameSprite::Update(deltaTime);
         if(moving)
             moveToTarget(circles);
+        drawPath(deltaTime);
+    }
+    
+    void Camel::drawPath(float deltaTime)
+    {
+        for(size_t i =0;i!=pathToDraw.size();++i)
+        {
+            if(pathToDraw[i]!=nullptr)
+                pathToDraw[i]->Update(deltaTime);
+        }
     }
 
     void Camel::moveToTarget(std::vector<std::unique_ptr<CircleObstacle>> &circles)
@@ -58,8 +69,8 @@ gameobject::GameSprite("circle.png",position), startPosition(position),moveSpeed
                 float thrasholdAndLengthDifference = obstacleThreshold - distanceVectorToObstacleLength;
                 utils::Point3D<float> adjustmentVector = distanceVectorToObstacle;
                 adjustmentVector.normalize(adjustmentVector.length());
-                adjustmentVector = adjustmentVector.scalar(thrasholdAndLengthDifference * avoidanceForce);
-                position-=(adjustmentVector * moveSpeed);
+                adjustmentVector = adjustmentVector.scalar(thrasholdAndLengthDifference);
+                position-=(adjustmentVector * moveSpeed * avoidanceForce);
             }
         }
         
@@ -67,6 +78,8 @@ gameobject::GameSprite("circle.png",position), startPosition(position),moveSpeed
         if(distanceToTarget<=0.1f)
             moving = false;
         
+        pathToDraw.emplace_back(std::unique_ptr<gameobject::Line>(new gameobject::Line("circle.png",prevPosition,position,utils::Point3D<float>(1,1,1))));
+        prevPosition = position;
     }
 
 
@@ -75,10 +88,12 @@ gameobject::GameSprite("circle.png",position), startPosition(position),moveSpeed
         std::random_device rd; // obtain a random number from hardware
         std::mt19937 eng(rd()); // seed the generator
         
-        std::uniform_int_distribution<> pos_x_random(-8, 8);
+        std::uniform_int_distribution<> pos_x_random(-15, 15);
         targetPosition = utils::Point3D<float>(pos_x_random(eng), 8, position.Z);
         moving = true;
         position = startPosition;
+        prevPosition = startPosition;
+        pathToDraw.clear();
     }
 
     Camel::~Camel()

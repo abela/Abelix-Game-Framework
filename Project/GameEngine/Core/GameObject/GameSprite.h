@@ -22,7 +22,6 @@ namespace gameobject {
     protected:
         virtual void CompileShaders() override;
         void Draw(float deltaTime) override;
-    private:
         void LoadTexture(char *path);
         GLuint _mainTexture;
         GLuint _texCoordSlot;
